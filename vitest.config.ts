@@ -12,15 +12,25 @@ export default defineConfig({
     globals: true,
     setupFiles: ["./tests/setup-test-environment.ts"],
     include: ["./**/*.{spec,test}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
+    exclude: [
+      "./playwright/**",
+      "./tests-examples/**",
+      "./*.e2e.{ts,tsx}",
+      "./node_modules/**",
+    ],
     //@ts-ignore - Linter flagging for not matching overloads, but it works
     watch: {
       ignored: [
         String.raw`.*\\/node_modules\\/.*`,
         String.raw`.*\\/build\\/.*`,
         String.raw`.*\\/postgres-data\\/.*`,
+        String.raw`.*\\/playwright\\/.*`,
+        String.raw`.*\\/tests-examples\\/.*`,
+        String.raw`.*\\.e2e\\.(ts|tsx)$`,
       ],
     },
     coverage: {
+      provider: "v8",
       reporter: ["text", "json", "html"],
     },
   },

@@ -1,26 +1,92 @@
 @import "tailwindcss";
+@config "../tailwind.config.js";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*Setting color of html so there is no miss-matching colors when scrolling to much up or down*/
+html{
+  background-color: var(--background);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer utilities {
+  .text-hero {
+    @apply text-[4.5rem] leading-tight font-bold;
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .text-section {
+    @apply text-[2.25rem] leading-snug font-bold;
+  }
+
+  .text-title {
+    @apply text-[2rem] leading-relaxed font-bold;
+  }
+
+  .text-caption {
+    @apply text-[1.3rem] leading-normal font-bold;
+  }
+
+  .size-max-screen {
+    @apply max-w-[100rem]
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  --background: #F8F8FF;
+  --background-hover: #1A1A1A;
+  --foreground-title: #1A1A1A;
+  --foreground-text: #555555;
+  --foreground-hover-title: #F8F8FF;
+  --primary: #A074FF;
+  --secondary-background: #1A1A1A ;
+  --secondary-foregoround: #F8F8FF;
 }
+
+.dark {
+  --background: #1A1A1A;
+  --background-hover: #F8F8FF;
+  --foreground-title: #F8F8FF;
+  --foreground-subtitle: #D3D3D3;
+  --foreground-text: #B0B0B0;
+  --foreground-hover-title: #1A1A1A;
+  --primary: #8c52ff;
+  --secondary-background: #F8F8FF ;
+  --secondary-foreground: #1A1A1A;
+
+}
+
+@theme {
+  --color-background: var(--background); /* Used for backgorund */
+  --color-background-hover: var(--background-hover); /* Used for backgorund on hover*/
+  --color-foreground-title: var(--foreground-title); /* Used for large text and icons*/
+  --color-foreground-subtitle: var(--foreground-subtitle); /* Used for subtitle text */
+  --color-foreground-text: var(--foreground-text);
+  --color-foreground-hover-title: var(--foreground-hover-title); /* Used for larger text and icons on hover*/
+  --color-primary: var(--primary); /* Used for styling and higlighting primary elements*/
+  --color-secondary-backgorund: var(--secondary-background); /* Inverted backgorund color */
+  --color-secondary-foreground: var(--secondary-foreground); /* Inverted foreground title color */
+
+  /* Fonts */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-lilita-one: var(--font-lilita-one);
+}
+
+
+body {
+  /*background: var(--background);*/
+  /*color: var(--foreground);*/
+  font-family: Arial, Helvetica, sans-serif;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  height: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
