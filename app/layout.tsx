@@ -1,7 +1,12 @@
 import "./globals.css";
 
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Lilita_One } from "next/font/google";
+
+import BreakpointDebuggerWrapper from "@/app/components/BreakpointDebuggerWrapper";
+import { InitTheme } from "@/app/components/InitTheme";
+import { ThemeProvider } from "@/app/context/ThemeContext";
+import { UIProvider } from "@/app/context/UIContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -11,6 +16,12 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const lilitaOne = Lilita_One({
+  variable: "--font-lilita-one",
+  subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -24,11 +35,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      data-theme="dark"
+      className="transition-colors duration-500"
+    >
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${lilitaOne.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>
+          <UIProvider>
+            <main className="relative flex items-center justify-center">
+              {children}
+            </main>
+          </UIProvider>
+        </ThemeProvider>
+        <BreakpointDebuggerWrapper />
       </body>
     </html>
   );

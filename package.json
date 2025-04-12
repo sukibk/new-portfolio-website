@@ -31,10 +31,21 @@
     "test:e2e:ui": "npx playwright test --ui"
   },
   "dependencies": {
+    "@popmotion/popcorn": "^0.4.4",
     "@prisma/client": "^6.5.0",
+    "@xterm/xterm": "^5.5.0",
+    "clsx": "^2.1.1",
+    "fontfaceobserver": "^2.3.0",
+    "framer-motion": "^12.6.3",
+    "lodash": "^4.17.21",
+    "lucide-react": "^0.487.0",
     "next": "15.2.4",
+    "popmotion": "^11.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-type-animation": "^3.2.0",
+    "tailwind-breakpoint-debugger": "^1.0.12",
+    "tailwind-merge": "^3.2.0",
     "vitest": "^3.1.1"
   },
   "devDependencies": {
@@ -70,9 +81,11 @@
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "prisma": "^6.5.0",
+    "react-lorem-ipsum": "^1.4.10",
     "tailwindcss": "^4",
     "tsx": "^4.19.3",
     "typescript": "^5",
     "vite-tsconfig-paths": "^5.1.4"
-  }
+  },
+  "packageManager": "pnpm@10.4.1+sha512.c753b6c3ad7afa13af388fa6d808035a008e30ea9993f58c6663e2bc5ff21679aa834db094987129aa4d488b86df57f7b634981b2f827cdcacc698cc0cfb88af"
 }
