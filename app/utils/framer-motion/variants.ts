@@ -2,8 +2,8 @@
  * this project categorized by where they are used
  */
 
-// hero/Section.tsx
-const parentVariants = {
+// components/hero/HeroText.tsx
+const ht_parentVariants = {
   hidden: { opacity: 0, x: 50 },
   visible: {
     opacity: 1,
@@ -16,9 +16,36 @@ const parentVariants = {
   },
 };
 
-const childVariants = {
+const ht_childVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
 };
 
-export { childVariants, parentVariants };
+// components/hero/HeroImage.tsx
+const hi_parentVariants = {
+  visible: {
+    transition: {
+      staggerChildren: 0.6,
+    },
+  },
+};
+
+const hi_childrenVariants = {
+  hidden: { opacity: 0, x: 50, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeOut",
+    },
+  },
+};
+
+export {
+  hi_childrenVariants,
+  hi_parentVariants,
+  ht_childVariants,
+  ht_parentVariants,
+};

@@ -5,7 +5,7 @@ import { MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "@/app/context/ThemeContext";
 import { useUIContext } from "@/app/context/UIContext";
 
-export const ThemeSwitcher = () => {
+const ThemeSwitcher = () => {
   const {
     state: { theme: currentTheme },
     dispatch,
@@ -14,11 +14,14 @@ export const ThemeSwitcher = () => {
   const { isScrolled, hamburgerOpened } = useUIContext();
 
   return (
-    <button
+    <motion.button
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
       className={`text-white fixed 
         text-foreground-h p-2.5 rounded-md cursor-pointer ease-in top-5 z-50
         right-5 transition-all duration-300 hover:bg-background-hover 
-        nav:right-[calc(50%-800px)]
+        nav:right-[calc(50%-800px)] overflow-hidden
         hover:text-foreground-hover-title w-10 h-10
         ${isScrolled || hamburgerOpened ? "nav:mr-6 bg-transparent" : "bg-primary"}
         `}
@@ -32,10 +35,6 @@ export const ThemeSwitcher = () => {
             animate={{
               opacity: 1,
               y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: 20,
             }}
             className="absolute inset-0 flex items-center justify-center"
           >
@@ -51,16 +50,14 @@ export const ThemeSwitcher = () => {
               opacity: 1,
               y: 0,
             }}
-            exit={{
-              opacity: 0,
-              y: -20,
-            }}
             className="absolute inset-0 flex items-center justify-center hover:!text-white"
           >
             <SunIcon className={`${hamburgerOpened && "text-primary"}`} />
           </motion.div>
         )}
       </AnimatePresence>
-    </button>
+    </motion.button>
   );
 };
+
+export default ThemeSwitcher;

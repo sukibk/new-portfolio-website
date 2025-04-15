@@ -1,10 +1,13 @@
 "use client";
 
-import { motion, type Variants } from "framer-motion";
+import { AnimatePresence, motion, type Variants } from "framer-motion";
+import { useRouter } from "next/navigation";
 import { RefObject, useState } from "react";
 
 import { useUIContext } from "@/app/context/UIContext";
 import useScroll from "@/app/hooks/useScroll";
+
+import Link from "./NavLink";
 
 export interface NavBarLayoutProps {
   scrollRef: RefObject<HTMLDivElement | null>;
@@ -15,6 +18,10 @@ interface PathProps {
   variants: Variants;
   transition?: { duration: number };
 }
+
+const NAVIGATION_MENU = ["HOME", "ABOUT", "PROJECT", "CONTACT"];
+
+const MotionLink = motion(Link);
 
 const Path = (props: PathProps) => {
   const { isScrolled, hamburgerOpened } = useUIContext();
@@ -38,6 +45,21 @@ const Path = (props: PathProps) => {
 
 const NavbarLayout = () => {
   const { isScrolled, hamburgerOpened, dispatch } = useUIContext();
+
+  const [showMenu, setShowMenu] = useState(false);
+  const router = useRouter();
+
+  const toggleMenu = () => {
+    if (hamburgerOpened) {
+      setShowMenu(false);
+      setTimeout(() => {
+        dispatch({ type: "TOGGLE_HAMBURGER" });
+      }, 500);
+    } else {
+      setShowMenu(true);
+      dispatch({ type: "TOGGLE_HAMBURGER" });
+    }
+  };
 
   const animatedRect = {
     width: hamburgerOpened ? "100%" : isScrolled ? "100%" : "2.5rem",
@@ -67,8 +89,48 @@ const NavbarLayout = () => {
         animate={animatedRect}
         transition={{ duration: 0.4, ease: "easeInOut" }}
         className={`fixed nav:!left-[calc(50%-800px)] size-max-screen 
-        transition-colors duration-800 z-40 top-0 left-0 ${bgClass}`}
-      />
+        transition-colors duration-800 nav:duration-500 z-40 top-0 left-0 ${bgClass}`}
+      >
+        <AnimatePresence>
+          {showMenu && (
+            <div
+              key="menu"
+              className="h-full w-full flex flex-col justify-center items-center gap-10 xl:gap-24 2xl:gap-28 3xl:gap-36
+              transition-all duration-500"
+            >
+              {NAVIGATION_MENU.map((text, i) => (
+                <MotionLink
+                  key={text}
+                  href={`#${text.toLowerCase()}`}
+                  initial={{ opacity: 0, x: -500 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -500 }}
+                  transition={{ duration: 0.2, delay: i * 0.2 }}
+                  onClick={(e) => {
+                    toggleMenu();
+                    e.preventDefault();
+                    setTimeout(() => {
+                      const el = document.getElementById(text.toLowerCase());
+
+                      if (el) {
+                        el.scrollIntoView({ behavior: "smooth" });
+
+                        window.history.pushState(
+                          null,
+                          "",
+                          `#${text.toLowerCase()}`
+                        );
+                      }
+                    }, 800);
+                  }}
+                >
+                  {text}
+                </MotionLink>
+              ))}
+            </div>
+          )}
+        </AnimatePresence>
+      </motion.div>
 
       {/* Optional text overlay for testing */}
       <motion.svg
@@ -80,7 +142,7 @@ const NavbarLayout = () => {
         className={`outline-0 border-0 cursor-pointer fixed nav:left-[calc(50%-800px)]
       top-5 left-5  px-[9px] pt-[4.5px] w-10 h-10  transition-all duration-300 z-40 rounded-md hover:scale-120
       ${isScrolled && "nav:ml-5"}`}
-        onClick={() => dispatch({ type: "TOGGLE_HAMBURGER" })}
+        onClick={toggleMenu}
       >
         <Path
           variants={{

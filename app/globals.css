@@ -67,6 +67,8 @@ html{
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-lilita-one: var(--font-lilita-one);
+  --font-code: var(--font-code);
+  --font-pacifico: var(--font-pacifico);
 }
 
 

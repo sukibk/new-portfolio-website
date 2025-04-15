@@ -1,5 +1,5 @@
 // tailwind.config.js
-module.exports = {
+export default {
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
     "node_modules/tailwind-breakpoint-debugger/**/*.{js,ts,jsx,tsx}",
