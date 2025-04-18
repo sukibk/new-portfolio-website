@@ -2,7 +2,7 @@
 @config "../tailwind.config.js";
 
 /*Setting color of html so there is no miss-matching colors when scrolling to much up or down*/
-html{
+html {
   background-color: var(--background);
 }
 
@@ -24,44 +24,113 @@ html{
   }
 
   .size-max-screen {
-    @apply max-w-[100rem]
+    @apply max-w-[100rem];
   }
 }
 
 :root {
-  --background: #F8F8FF;
-  --background-hover: #1A1A1A;
-  --foreground-title: #1A1A1A;
+  --background: #f8f8ff;
+  --background-hover: #1a1a1a;
+  --foreground-title: #1a1a1a;
   --foreground-text: #555555;
-  --foreground-hover-title: #F8F8FF;
-  --primary: #A074FF;
-  --secondary-background: #1A1A1A ;
-  --secondary-foregoround: #F8F8FF;
+  --foreground-hover-title: #f8f8ff;
+  --primary: #a074ff;
+  --secondary-background: #1a1a1a;
+  --secondary-foreground: #f8f8ff;
+
+  /* Buttons */
+  --button-primary-bg: var(--primary);
+  --button-secondary-bg: var(--secondary-background);
+  --button-skeleton-bg: transparent;
+
+  --button-primary-bg-hover: var(--secondary-background);
+  --button-secondary-bg-hover: var(--primary);
+  --button-skeleton-bg-hover: #1a1a1a;
+
+  --button-primary-fg: #f8f8ff;
+  --button-secondary-fg: #f8f8ff;
+  --button-skeleton-fg: var(--foreground-title);
+
+  --button-primary-fg-hover: #f8f8ff;
+  --button-secondary-fg-hover: #f8f8ff;
+  --button-skeleton-fg-hover: var(--background);
 }
 
 .dark {
-  --background: #1A1A1A;
-  --background-hover: #F8F8FF;
-  --foreground-title: #F8F8FF;
-  --foreground-subtitle: #D3D3D3;
-  --foreground-text: #B0B0B0;
-  --foreground-hover-title: #1A1A1A;
+  --background: #1a1a1a;
+  --background-hover: #f8f8ff;
+  --foreground-title: #f8f8ff;
+  --foreground-subtitle: #d3d3d3;
+  --foreground-text: #b0b0b0;
+  --foreground-hover-title: #1a1a1a;
   --primary: #8c52ff;
-  --secondary-background: #F8F8FF ;
-  --secondary-foreground: #1A1A1A;
+  --secondary-background: #f8f8ff;
+  --secondary-foreground: #1a1a1a;
 
+  /*Buttons*/
+  --button-primary-bg: var(--primary);
+  --button-secondary-bg: #f8f8ff;
+  --button-skeleton-bg: transparent;
+
+  --button-primary-bg-hover: var(--secondary-background);
+  --button-secondary-bg-hover: var(--primary);
+  --button-skeleton-bg-hover: #f8f8ff;
+
+  --button-primary-fg: #f8f8ff;
+  --button-secondary-fg: var(--primary);
+  --button-skeleton-fg: var(--foreground-title);
+
+  --button-primary-fg-hover: var(--primary);
+  --button-secondary-fg-hover: #f8f8ff;
+  --button-skeleton-fg-hover: var(--background);
 }
 
 @theme {
   --color-background: var(--background); /* Used for backgorund */
-  --color-background-hover: var(--background-hover); /* Used for backgorund on hover*/
-  --color-foreground-title: var(--foreground-title); /* Used for large text and icons*/
-  --color-foreground-subtitle: var(--foreground-subtitle); /* Used for subtitle text */
+  --color-background-hover: var(
+    --background-hover
+  ); /* Used for backgorund on hover*/
+  --color-foreground-title: var(
+    --foreground-title
+  ); /* Used for large text and icons*/
+  --color-foreground-subtitle: var(
+    --foreground-subtitle
+  ); /* Used for subtitle text */
   --color-foreground-text: var(--foreground-text);
-  --color-foreground-hover-title: var(--foreground-hover-title); /* Used for larger text and icons on hover*/
-  --color-primary: var(--primary); /* Used for styling and higlighting primary elements*/
-  --color-secondary-backgorund: var(--secondary-background); /* Inverted backgorund color */
-  --color-secondary-foreground: var(--secondary-foreground); /* Inverted foreground title color */
+  --color-foreground-hover-title: var(
+    --foreground-hover-title
+  ); /* Used for larger text and icons on hover*/
+  --color-primary: var(
+    --primary
+  ); /* Used for styling and higlighting primary elements*/
+  --color-secondary-background: var(
+    --secondary-background
+  ); /* Inverted backgorund color */
+  --color-secondary-foreground: var(
+    --secondary-foreground
+  ); /* Inverted foreground title color */
+
+  /*Button styles*/
+  /*--------------------*/
+  /* Background color */
+  --color-button-primary-bg: var(--button-primary-bg);
+  --color-button-secondary-bg: var(--button-secondary-bg);
+  --color-button-skeleton-bg: var(--button-skeleton-bg);
+
+  /* Background color - HOVER */
+  --color-button-primary-bg-hover: var(--button-primary-bg-hover);
+  --color-button-secondary-bg-hover: var(--button-secondary-bg-hover);
+  --color-button-skeleton-bg-hover: var(--button-skeleton-bg-hover);
+
+  /* Foreground color*/
+  --color-button-primary-fg: var(--button-primary-fg);
+  --color-button-secondary-fg: var(--button-secondary-fg);
+  --color-button-skeleton-fg: var(--button-skeleton-fg);
+
+  /* Foreground color - HOVER */
+  --color-button-primary-fg-hover: var(--button-primary-fg-hover);
+  --color-button-secondary-fg-hover: var(--button-secondary-fg-hover);
+  --color-button-skeleton-fg-hover: var(--button-skeleton-fg-hover);
 
   /* Fonts */
   --font-sans: var(--font-geist-sans);
@@ -71,7 +140,6 @@ html{
   --font-pacifico: var(--font-pacifico);
 }
 
-
 body {
   /*background: var(--background);*/
   /*color: var(--foreground);*/
@@ -80,7 +148,9 @@ body {
   scroll-behavior: smooth;
   overflow-y: scroll;
   height: 100%;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .scrollbar-hide::-webkit-scrollbar {
@@ -91,4 +161,3 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
-

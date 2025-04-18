@@ -1,14 +1,17 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 
+import HeroCallToAction from "@/app/components/hero/HeroCallToAction";
 import {
   hi_childrenVariants,
   hi_parentVariants,
 } from "@/app/utils/framer-motion/variants";
-import HeroCallToAction from "@/app/components/hero/HeroCallToAction";
 
 const MotionImage = motion(Image);
 
+/**
+ * Image on the Hero page with following labeling and Call To Action on mobile
+ * */
 const HeroImage = () => {
   return (
     <div
@@ -47,7 +50,7 @@ const HeroImage = () => {
           variants={hi_childrenVariants}
           className=" absolute
            text-foreground-text right-0 rounded-md font-semibold
-          text-xs font-code inline-block z-20"
+          text-xs font-code inline-block z-20 right-[1.56rem] md:right-0"
         >
           just-a-chill-guy.jpg
         </motion.p>

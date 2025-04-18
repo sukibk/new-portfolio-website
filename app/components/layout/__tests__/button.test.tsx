@@ -25,13 +25,15 @@ describe("Button", () => {
   it("applies the correct variant for variant=sprimary", () => {
     render(<Button variant="primary">Click Me</Button>);
 
-    expect(screen.getByText("Click Me").className).toMatch(/bg-primary/);
+    expect(screen.getByText("Click Me").className).toMatch(
+      /bg-button-primary-bg/
+    );
   });
 
   it("applies correct class for variant=secondary", () => {
     render(<Button variant="secondary">A</Button>);
     const button = screen.getByRole("button");
-    expect(button.className).toMatch(/bg-secondary-backgorund/);
+    expect(button.className).toMatch(/bg-button-secondary-bg/);
   });
 
   it("applies correct class for variant=skeleton", () => {

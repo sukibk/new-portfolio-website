@@ -1,12 +1,13 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 
 import Intro from "@/app/components/intro/Intro";
 import NavbarLayout from "@/app/components/navbar/NavbarLayout";
 import ThemeSwitcher from "@/app/components/ThemeSwitcher";
-import { useUIContext } from "@/app/context/UIContext"; // import your navbar
+import { useUIContext } from "@/app/context/UIContext";
+import useControlledScroll from "@/app/hooks/useControlledScroll"; // import your navbar
 
 /** This is layout for landing page. When user first visits page he will see
  * welcome text sequence which will be deactivated, either if he waits it out
@@ -31,11 +32,26 @@ export default function NonDashboardLayout({
 
   const { scrollRef } = useUIContext();
 
+  useEffect(() => {
+    if (!isTypingDone) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [isTypingDone]);
+
   return (
     <main className="relative">
       <div
-        className="h-screen snap-y w-screen scrollbar-hide
-        snap-mandatory overflow-y-scroll scroll-smooth flex justify-center
+        // className="h-screen snap-y w-screen scrollbar-hide
+        // snap-mandatory overflow-y-scroll scroll-smooth flex justify-center
+        // font-lilita-one "
+        className="h-screen  w-screen scrollbar-hide
+        overflow-y-scroll scroll-smooth flex justify-center
         font-lilita-one "
         ref={scrollRef}
       >

@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+
 import HeroPage from "@/app/(non-dashboard)/hero/Section";
 
 describe("Hero Page", () => {
@@ -10,6 +11,8 @@ describe("Hero Page", () => {
     expect(screen.getByText(/Sof4war3 Eng1n33r/)).toBeInTheDocument();
     expect(screen.getByText("US Permanent Resident")).toBeInTheDocument();
     expect(screen.getByText("just-a-chill-guy.jpg")).toBeInTheDocument();
+    expect(screen.queryAllByText(/download resume/i)).toHaveLength(2);
+    expect(screen.queryAllByText(/contact me/i)).toHaveLength(2);
 
     const image = await screen.findByAltText("Marko Sudar");
     expect(image).toBeInTheDocument();

@@ -36,14 +36,16 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "p-3 rounded-md hover:scale-110 font-bold cursor-pointer relative overflow-hidden",
+          "p-3 rounded-md hover:scale-110 font-bold cursor-pointer relative overflow-hidden transition-all duration-500",
           variant === "primary" &&
-            "bg-primary hover:bg-background-hover text-white hover:text-foreground-hover-title ",
+            "bg-button-primary-bg hover:bg-button-primary-bg-hover " +
+              "text-button-primary-fg hover:text-button-primary-fg-hover ",
           variant === "secondary" &&
-            "bg-secondary-backgorund text-primary hover:text-white hover:bg-primary ",
+            "bg-button-secondary-bg text-button-secondary-fg " +
+              "hover:text-button-secondary-fg-hover hover:bg-button-secondary-bg-hover ",
           variant === "skeleton" &&
-            "border bg-transparent text-foreground-title hover:bg-background-hover hover:text-foreground-hover-title   " +
-              "transition-all duration-500 "
+            "border border-button-skeleton-fg bg-button-skeleton-bg text-button-skeleton-fg " +
+              "hover:bg-button-skeleton-bg-hover hover:text-button-skeleton-fg-hover"
         )}
         disabled={loading || props.disabled}
         {...props}

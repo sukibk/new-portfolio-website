@@ -5,7 +5,7 @@ import { useState } from "react";
 import { TypeAnimation } from "react-type-animation";
 
 import Intro from "@/app/components/intro/Intro";
-import { ThemeSwitcher } from "@/app/components/ThemeSwitcher";
+// import { ThemeSwitcher } from "@/app/components/ThemeSwitcher";
 
 export default function Home() {
   const [isTypingDone, setIsTypingDone] = useState<boolean>(() => {
@@ -30,7 +30,7 @@ export default function Home() {
               bg-background dark:text-cover
               transition-colors duration-500"
           >
-            <ThemeSwitcher />
+            {/*<ThemeSwitcher />*/}
           </motion.section>
         )}
         {/*<AboutPage />*/}

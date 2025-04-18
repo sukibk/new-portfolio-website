@@ -34,14 +34,14 @@ const eslintConfig = [
           "unicorn/prefer-module": "off",
         },
       },
-      {
-        // 3) Now we enable eslint-plugin-testing-library rules or preset only for matching testing files!
-        // files: [
-        //   "**/__tests__/**/*.[jt]s?(x)",
-        //   "**/?(*.)+(spec|test).[jt]s?(x)",
-        // ],
-        // ...testingLibrary.configs["flat/react"],
-      },
+      // {
+      // 3) Now we enable eslint-plugin-testing-library rules or preset only for matching testing files!
+      // files: [
+      //   "**/__tests__/**/*.[jt]s?(x)",
+      //   "**/?(*.)+(spec|test).[jt]s?(x)",
+      // ],
+      // ...testingLibrary.configs["flat/react"],
+      // },
     ],
   }),
 ];

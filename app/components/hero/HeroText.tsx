@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 
+import HeroCallToAction from "@/app/components/hero/HeroCallToAction";
 import {
   ht_childVariants,
   ht_parentVariants,
 } from "@/app/utils/framer-motion/variants";
-import HeroCallToAction from "@/app/components/hero/HeroCallToAction";
 
+/*
+ * First text users sees when entering webiste with Call To Action on desktop
+ * **/
 const HeroText = () => {
   return (
     <motion.div
@@ -69,7 +72,7 @@ const HeroText = () => {
           {" "}
           &lt;p&gt;Sof4war3 Eng1n33r&lt;/p&gt;
         </span>{" "}
-        working and living in the United States.
+        working and living in the United States
       </motion.p>
       <HeroCallToAction className="hidden md:flex" />
     </motion.div>
