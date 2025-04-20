@@ -34,7 +34,7 @@ const HeroImage = () => {
           alt="Marko Sudar"
           width={350}
           height={350}
-          className="mx-auto md:mx-0 rounded-md relative z-10 lg:w-[400px] lg:h-[400px] xl:w-[500px] xl:h-[450px] cursor-pointer shadow-lg"
+          className="mx-auto md:mx-0 rounded-md relative z-10 lg:w-[450px] lg:h-[400px] xl:w-[550px] xl:h-[500px] cursor-pointer shadow-lg"
         />
         <motion.p
           variants={hi_childrenVariants}

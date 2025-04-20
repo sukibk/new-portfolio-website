@@ -2,6 +2,22 @@
  * this project categorized by where they are used
  */
 
+// Project-wide
+const subtleScroll = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+
+    transition: { duration: 0.25, ease: "easeIn" },
+  },
+};
+
 // components/hero/HeroText.tsx
 const ht_parentVariants = {
   hidden: { opacity: 0, x: 50 },
@@ -43,9 +59,27 @@ const hi_childrenVariants = {
   },
 };
 
+// components/about/Card.tsx
+const techCardVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.4, ease: "easeOut" },
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+
+    transition: { duration: 0.25, ease: "easeIn" },
+  },
+};
+
 export {
   hi_childrenVariants,
   hi_parentVariants,
   ht_childVariants,
   ht_parentVariants,
+  subtleScroll,
+  techCardVariants,
 };

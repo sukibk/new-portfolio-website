@@ -5,6 +5,7 @@ import {
   ht_childVariants,
   ht_parentVariants,
 } from "@/app/utils/framer-motion/variants";
+import AngledText from "@/app/components/shared/AngledText";
 
 /*
  * First text users sees when entering webiste with Call To Action on desktop
@@ -28,24 +29,19 @@ const HeroText = () => {
       {/*  bg-gray-800 text-gray-400 -mb-2 rounded-md*/}
       {/*  text-sm p-1 font-code inline-block"*/}
       {/*>*/}
-      <motion.p
-        variants={ht_childVariants}
-        className="
-           text-foreground-text -mb-5 ml-40 md:-mb-4 md:ml-60 rounded-md font-semibold
-          text-sm font-code inline-block z-20 rotate-6 md:rotate-5"
-      >
+      <AngledText side="right" className="xl:!ml-100">
         console.log
-      </motion.p>
+      </AngledText>
       <motion.h1
         variants={ht_childVariants}
-        className="text-4xl md:text-5xl text-foreground-title transition-colors duration-500"
+        className="text-4xl md:text-5xl xl:text-7xl text-foreground-title transition-colors duration-500"
       >
         HELLO WORLD!
       </motion.h1>
 
       <motion.h2
         variants={ht_childVariants}
-        className="text-2xl md:text-4xl font-light text-foreground-title
+        className="text-2xl md:text-4xl xl:text-6xl font-light text-foreground-title
           transition-colors duration-500"
       >
         My name is
@@ -59,14 +55,14 @@ const HeroText = () => {
 
       <motion.p
         variants={ht_childVariants}
-        className="text-base md:text-lg text-foreground-text leading-10
+        className="text-base md:text-lg xl:text-3xl text-foreground-text leading-10
            transition-colors duration-500"
       >
         I’m a{" "}
         <span
           className={
-            "bg-gray-800 italic text-gray-300 p-2 mx-1 rounded-md " +
-            "font-code text-sm"
+            "align-middle inline-flex items-center bg-gray-800/50 italic text-[#f8f8ff] dark:text-gray-300 font-bold  p-2 mx-1  font-code rounded-md transition-colors duration-500" +
+            "font-code text-sm  xl:text-lg mt"
           }
         >
           {" "}

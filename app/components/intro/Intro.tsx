@@ -4,10 +4,7 @@ import { FC, useEffect, useState } from "react";
 import IntroText from "@/app/components/intro/IntroText";
 import Button from "@/app/components/layout/Button";
 import useDelayShowElement from "@/app/hooks/useDelayShowElement";
-
-interface IntroProps {
-  turnIntroOff: (off: boolean) => void;
-}
+import useAppStore from "@/app/storage/zustandLocal";
 
 /**
  * Intro Component
@@ -19,13 +16,15 @@ interface IntroProps {
  * @returns JSX.Element
  *
  * @example
- * <Intro turnIntroOff={(off) => setIntroShown(!off)} />
+ * <Intro/>
  */
-const Intro: FC<IntroProps> = ({ turnIntroOff }) => {
+const Intro = () => {
   const displayEndButton = useDelayShowElement({
     initialState: false,
     delay: 19000,
   });
+
+  const { setIntroCompleted } = useAppStore();
 
   return (
     <motion.div
@@ -55,8 +54,7 @@ const Intro: FC<IntroProps> = ({ turnIntroOff }) => {
             <Button
               variant="skeleton"
               onClick={() => {
-                // localStorage.setItem("introCompleted", "true");
-                turnIntroOff(true);
+                setIntroCompleted();
               }}
             >
               ENTER WEBSITE
@@ -66,8 +64,7 @@ const Intro: FC<IntroProps> = ({ turnIntroOff }) => {
                 animate={{ width: "100%" }}
                 transition={{ duration: 5, ease: "linear", delay: 1 }}
                 onAnimationComplete={() => {
-                  // localStorage.setItem("introCompleted", "true");
-                  turnIntroOff(true);
+                  setIntroCompleted();
                 }}
                 className="absolute bottom-0 left-0 h-full bg-primary z-0
                  "
@@ -93,8 +90,7 @@ const Intro: FC<IntroProps> = ({ turnIntroOff }) => {
           >
             <Button
               onClick={() => {
-                // localStorage.setItem("introCompleted", "true");
-                turnIntroOff(true);
+                setIntroCompleted();
               }}
               variant="skeleton"
             >

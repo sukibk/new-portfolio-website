@@ -1,5 +1,6 @@
 // tailwind.config.js
 export default {
+  darkMode: "class", // Must-have for dark mode to function properly
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
     "node_modules/tailwind-breakpoint-debugger/**/*.{js,ts,jsx,tsx}",

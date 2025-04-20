@@ -7,7 +7,8 @@ import Intro from "@/app/components/intro/Intro";
 import NavbarLayout from "@/app/components/navbar/NavbarLayout";
 import ThemeSwitcher from "@/app/components/ThemeSwitcher";
 import { useUIContext } from "@/app/context/UIContext";
-import useControlledScroll from "@/app/hooks/useControlledScroll"; // import your navbar
+import useControlledScroll from "@/app/hooks/useControlledScroll";
+import useAppStore from "@/app/storage/zustandLocal"; // import your navbar
 
 /** This is layout for landing page. When user first visits page he will see
  * welcome text sequence which will be deactivated, either if he waits it out
@@ -23,14 +24,9 @@ export default function NonDashboardLayout({
 }: {
   children: ReactNode;
 }) {
-  const [isTypingDone, setIsTypingDone] = useState<boolean>(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("introCompleted") === "true";
-    }
-    return false;
-  });
-
   const { scrollRef } = useUIContext();
+
+  const { hasHydrated, introCompleted: isTypingDone } = useAppStore();
 
   useEffect(() => {
     if (!isTypingDone) {
@@ -43,6 +39,37 @@ export default function NonDashboardLayout({
       document.body.style.overflow = "auto";
     };
   }, [isTypingDone]);
+
+  // if (!hasHydrated) {
+  //   return (
+  //     <main className="bg-background h-screen flex justify-center items-center z-50">
+  //       <svg
+  //         xmlns="http://www.w3.org/2000/svg"
+  //         viewBox="0 0 300 150"
+  //         className="h-40 w-40"
+  //       >
+  //         <path
+  //           fill="none"
+  //           stroke="#A074FF"
+  //           stroke-width="15"
+  //           stroke-linecap="round"
+  //           stroke-dasharray="300 385"
+  //           stroke-dashoffset="0"
+  //           d="M275 75c0 31-27 50-50 50-58 0-92-100-150-100-28 0-50 22-50 50s23 50 50 50c58 0 92-100 150-100 24 0 50 19 50 50Z"
+  //         >
+  //           <animate
+  //             attributeName="stroke-dashoffset"
+  //             calcMode="spline"
+  //             dur="2"
+  //             values="685;-685"
+  //             keySplines="0 0 1 1"
+  //             repeatCount="indefinite"
+  //           ></animate>
+  //         </path>
+  //       </svg>
+  //     </main>
+  //   );
+  // }
 
   return (
     <main className="relative">
@@ -59,7 +86,7 @@ export default function NonDashboardLayout({
         <AnimatePresence mode={"wait"}>
           {!isTypingDone ? (
             <motion.div key="intro-element w-full">
-              <Intro turnIntroOff={setIsTypingDone} />
+              <Intro />
             </motion.div>
           ) : (
             <motion.div key="page" className="flex-1 size-max-screen w-full">
