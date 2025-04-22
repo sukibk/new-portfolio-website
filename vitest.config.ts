@@ -11,7 +11,7 @@ export default defineConfig({
   test: {
     environment: "happy-dom",
     globals: true,
-    setupFiles: ["./tests/setup-test-environment.ts"],
+    setupFiles: ["./tests/setup-test-environment.ts", "./vitest.setup.ts"],
     include: ["./**/*.{spec,test}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     exclude: [
       "./playwright/**",

@@ -2,13 +2,22 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import NonDashboardLayout from "@/app/(non-dashboard)/layout";
+import useAppStore from "@/app/storage/zustandLocal";
 
 // Mocks
-vi.mock("@/app/components/intro/Intro", () => ({
-  default: ({ turnIntroOff }: { turnIntroOff: (done: boolean) => void }) => (
-    <button onClick={() => turnIntroOff(true)}>Mock Intro</button>
-  ),
-}));
+vi.mock("@/app/components/intro/Intro", () => {
+  const React = require("react");
+  const useAppStore = require("@/app/storage/zustandLocal").default;
+
+  const MockIntro = () => {
+    const { setIntroCompleted } = useAppStore();
+    return <button onClick={() => setIntroCompleted()}>Mock Intro</button>;
+  };
+
+  return {
+    default: MockIntro,
+  };
+});
 
 vi.mock("@/app/components/navbar/NavbarLayout", () => ({
   default: () => <div data-testid="navbar">Navbar</div>,
@@ -32,10 +41,6 @@ vi.mock("@/app/context/UIContext", async () => {
 // Tests
 
 describe("NonDashboardLayout", () => {
-  beforeEach(() => {
-    localStorage.clear();
-  });
-
   it("shows Intro initially if LocalStorage is not set", () => {
     render(
       <NonDashboardLayout>
@@ -66,7 +71,7 @@ describe("NonDashboardLayout", () => {
   });
 
   it("skips intro and renders content immediately if introCompleted is in localStorage", () => {
-    localStorage.setItem("introCompleted", "true");
+    useAppStore.setState({ introCompleted: true });
 
     render(
       <NonDashboardLayout>

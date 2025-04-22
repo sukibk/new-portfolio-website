@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 
 import HeroCallToAction from "@/app/components/hero/HeroCallToAction";
+import AngledText from "@/app/components/shared/AngledText";
 import {
   ht_childVariants,
   ht_parentVariants,
 } from "@/app/utils/framer-motion/variants";
-import AngledText from "@/app/components/shared/AngledText";
 
 /*
  * First text users sees when entering webiste with Call To Action on desktop

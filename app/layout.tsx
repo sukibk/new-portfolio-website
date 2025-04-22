@@ -60,15 +60,16 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="dark"
-      className="transition-colors duration-500"
+      className="transition-colors duration-500 height-100 overflow-y-scroll overscroll-none"
     >
+      <head></head>
       <body
         className={`${lilitaOne.variable} ${geistMono.variable}
          ${firaCode.variable} ${pacificoFont.variable} antialiased`}
       >
         <ThemeProvider>
           <UIProvider>
-            <main className="relative flex items-center justify-center">
+            <main className="relative flex items-center justify-center ">
               {children}
             </main>
           </UIProvider>
