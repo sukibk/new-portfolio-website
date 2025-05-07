@@ -1,7 +1,7 @@
 import react from "@vitejs/plugin-react";
+import { DEFAULT_SEGMENT_KEY } from "next/dist/shared/lib/segment";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
-import { DEFAULT_SEGMENT_KEY } from "next/dist/shared/lib/segment";
 
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
@@ -11,7 +11,7 @@ export default defineConfig({
   test: {
     environment: "happy-dom",
     globals: true,
-    setupFiles: ["./tests/setup-test-environment.ts", "./vitest.setup.ts"],
+    setupFiles: ["./tests/setup-test-environment.ts"],
     include: ["./**/*.{spec,test}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
     exclude: [
       "./playwright/**",

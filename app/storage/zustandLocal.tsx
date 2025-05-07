@@ -1,7 +1,8 @@
+// stores/useAppStore.ts
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-interface AppStoreProps {
+export interface AppStoreProps {
   draggedFirst: boolean;
   introCompleted: boolean;
   hasHydrated: boolean;
@@ -10,12 +11,19 @@ interface AppStoreProps {
   setHasHydrated: (value: boolean) => void;
 }
 
+const initialAppState: Omit<
+  AppStoreProps,
+  "setDraggedFirst" | "setIntroCompleted" | "setHasHydrated"
+> = {
+  draggedFirst: false,
+  introCompleted: false,
+  hasHydrated: false,
+};
+
 const useAppStore = create<AppStoreProps>()(
   persist(
     (set) => ({
-      draggedFirst: false,
-      introCompleted: false,
-      hasHydrated: false,
+      ...initialAppState,
       setIntroCompleted: () => set({ introCompleted: true }),
       setDraggedFirst: () => set({ draggedFirst: true }),
       setHasHydrated: (value: boolean) => set({ hasHydrated: value }),
@@ -29,4 +37,4 @@ const useAppStore = create<AppStoreProps>()(
   )
 );
 
-export default useAppStore;
+export { initialAppState, useAppStore };

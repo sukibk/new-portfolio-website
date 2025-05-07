@@ -4,7 +4,7 @@ import { FC, useEffect, useState } from "react";
 import IntroText from "@/app/components/intro/IntroText";
 import Button from "@/app/components/layout/Button";
 import useDelayShowElement from "@/app/hooks/useDelayShowElement";
-import useAppStore from "@/app/storage/zustandLocal";
+import { useAppStore } from "@/app/storage/zustandLocal";
 
 /**
  * Intro Component

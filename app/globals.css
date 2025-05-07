@@ -138,6 +138,7 @@ html {
   --font-lilita-one: var(--font-lilita-one);
   --font-code: var(--font-code);
   --font-pacifico: var(--font-pacifico);
+  --font-arial: Arial, Helvetica, sans-serif;
 }
 
 body {

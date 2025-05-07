@@ -2,10 +2,11 @@
 
 import AboutPage from "@/app/(non-dashboard)/about/Section";
 import HeroPage from "@/app/(non-dashboard)/hero/Section";
-import Testimonials from "@/app/(non-dashboard)/testimonial/Section";
+import TestimonialsPage from "@/app/(non-dashboard)/testimonial/Section";
 // import SkillsPage from "@/app/(non-dashboard)/skills/page";
 import NavbarLayout from "@/app/components/navbar/NavbarLayout";
 import useSectionObserver from "@/app/hooks/useSectionObserver";
+import TimelinePage from "./timeline/Section";
 
 const NonDashboardSetup = () => {
   useSectionObserver();
@@ -14,8 +15,8 @@ const NonDashboardSetup = () => {
     <>
       <HeroPage />
       <AboutPage />
-      <Testimonials />
-      {/* <SkillsPage /> */}
+      <TestimonialsPage />
+      <TimelinePage />
     </>
   );
 };

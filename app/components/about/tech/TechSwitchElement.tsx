@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { TechSwitchProps } from "@/app/components/about/tech/TechSwitch";
 import AngledText from "@/app/components/shared/AngledText";
-import useAppStore from "@/app/storage/zustandLocal";
+import { useAppStore } from "@/app/storage/zustandLocal";
 import { cn } from "@/lib/utils";
 
 interface TechSwitchElementProps extends TechSwitchProps {

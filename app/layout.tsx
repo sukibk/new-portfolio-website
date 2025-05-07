@@ -60,9 +60,8 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="dark"
-      className="transition-colors duration-500 height-100 overflow-y-scroll overscroll-none"
+      className="transition-colors duration-500 height-100 overflow-y-scroll overscroll-none scrollbar-hide"
     >
-      <head></head>
       <body
         className={`${lilitaOne.variable} ${geistMono.variable}
          ${firaCode.variable} ${pacificoFont.variable} antialiased`}

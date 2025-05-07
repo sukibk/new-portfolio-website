@@ -9,7 +9,7 @@ const HeroPage = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen snap-start flex  flex-col
+      className="relative min-h-screen flex  flex-col
        items-center justify-center py-[5rem]
        md:flex-row dark:text-cover px-5 md:gap-8
        transition-colors duration-500 w-full flex-1 font-lilita-one border border-red-500
@@ -19,7 +19,7 @@ const HeroPage = () => {
       <HeroImage />
       <img
         src="/images/hero-section/mainIconsLight.png"
-        alt=""
+        alt="mainIconsLight.png"
         aria-hidden="true"
         className="absolute w-[450px] h-[450px] opacity-10  left-[-150px] bottom-[-80px]
               pointer-events-none select-none fill-[#222] 2xl:left-0 2xl:bottom-0"

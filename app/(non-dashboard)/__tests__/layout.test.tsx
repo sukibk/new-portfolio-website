@@ -1,13 +1,13 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { beforeEach } from "vitest";
 
 import NonDashboardLayout from "@/app/(non-dashboard)/layout";
-import useAppStore from "@/app/storage/zustandLocal";
+import { initialAppState, useAppStore } from "@/app/storage/zustandLocal";
 
 // Mocks
 vi.mock("@/app/components/intro/Intro", () => {
   const React = require("react");
-  const useAppStore = require("@/app/storage/zustandLocal").default;
 
   const MockIntro = () => {
     const { setIntroCompleted } = useAppStore();
@@ -41,6 +41,16 @@ vi.mock("@/app/context/UIContext", async () => {
 // Tests
 
 describe("NonDashboardLayout", () => {
+  beforeEach(() => {
+    useAppStore.setState({
+      ...initialAppState,
+      setIntroCompleted: () => useAppStore.setState({ introCompleted: true }),
+      setDraggedFirst: () => useAppStore.setState({ draggedFirst: true }),
+      setHasHydrated: (value: boolean) =>
+        useAppStore.setState({ hasHydrated: value }),
+    });
+  });
+
   it("shows Intro initially if LocalStorage is not set", () => {
     render(
       <NonDashboardLayout>
