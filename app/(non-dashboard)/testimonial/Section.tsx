@@ -2,13 +2,13 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import AngledText from "@/app/components/shared/AngledText";
+import ScrollButtons from "@/app/components/shared/ScrollButtons";
 import TestimonialCard from "@/app/components/testimonial/TestimonialCard";
 import TestimonialsContainer, {
   TestimonialsContainerRef,
 } from "@/app/components/testimonial/TestimonialContainer";
-import { testimonials } from "@/app/utils/framer-motion/testimonials";
 import TestimonialsTitle from "@/app/components/testimonial/TestimonialsTitle";
-import ScrollButtons from "@/app/components/shared/ScrollButtons";
+import { testimonials } from "@/app/constants/testimonials";
 
 const TestimonialsPage = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

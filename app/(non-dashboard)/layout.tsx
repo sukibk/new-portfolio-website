@@ -1,12 +1,13 @@
 "use client";
 
+import { log } from "console";
 import { AnimatePresence, motion } from "framer-motion";
 import { ReactNode, useEffect } from "react";
+
 import Intro from "@/app/components/intro/Intro";
 import NavbarLayout from "@/app/components/navbar/NavbarLayout";
 import ThemeSwitcher from "@/app/components/ThemeSwitcher";
 import { useAppStore } from "@/app/storage/zustandLocal";
-import { log } from "console";
 
 /**
  * This is layout for landing page.

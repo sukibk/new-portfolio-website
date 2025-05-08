@@ -1,13 +1,14 @@
 import {
+  forwardRef,
   useEffect,
   useImperativeHandle,
   useRef,
   useState,
-  forwardRef,
 } from "react";
+
 import TestimonialCard from "@/app/components/testimonial/TestimonialCard";
-import { testimonials } from "@/app/utils/framer-motion/testimonials";
 import { useIsMobile } from "@/app/hooks/useIsMobile";
+import { testimonials } from "@/app/constants/testimonials";
 
 type TestimonialContainerProps = {
   isScrolling: boolean;
@@ -94,5 +95,7 @@ const TestimonialsContainer = forwardRef<
     </div>
   );
 });
+
+TestimonialsContainer.displayName = "TestimonialsContainer";
 
 export default TestimonialsContainer;

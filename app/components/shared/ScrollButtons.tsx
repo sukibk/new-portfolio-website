@@ -1,4 +1,4 @@
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 type ScrollButtonsProps = {
   currentIndex: number;

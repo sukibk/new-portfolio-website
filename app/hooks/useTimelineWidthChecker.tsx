@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
-const MOBILE_BREAKPOINT = 1472;
+const TIMELINE_BREAKPOINT = 1504;
 
 export function useTimelineWidthChecker() {
   const [showTwoColumns, setShowTwoColumns] = useState<boolean>(() => {
     if (typeof window === "undefined") return false;
-    return window.innerWidth > MOBILE_BREAKPOINT;
+    return window.innerWidth > TIMELINE_BREAKPOINT;
   });
 
   useEffect(() => {
     const handleResize = () => {
-      setShowTwoColumns(window.innerWidth > MOBILE_BREAKPOINT);
+      setShowTwoColumns(window.innerWidth >= TIMELINE_BREAKPOINT);
     };
 
     window.addEventListener("resize", handleResize);
@@ -19,5 +19,5 @@ export function useTimelineWidthChecker() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  return showTwoColumns;
+  return !!showTwoColumns;
 }

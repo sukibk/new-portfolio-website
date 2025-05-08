@@ -1,28 +1,38 @@
-import ArticleCard from "../layout/ArticleCard";
-import ScrollWrapper from "../layout/ScrollWrapper";
 import clsx from "clsx";
+
 import { useIsMobile } from "@/app/hooks/useIsMobile";
 import { useTimelineWidthChecker } from "@/app/hooks/useTimelineWidthChecker";
 
-interface TimelineCardProps extends React.HTMLAttributes<HTMLDivElement> {
+import ArticleCard from "../layout/ArticleCard";
+import ScrollWrapper from "../layout/ScrollWrapper";
+import Image from "next/image";
+
+export interface TimelineCardProps
+  extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   date: string;
-  description: string;
+  logo: string;
+  company: string;
+  technologies: string[];
   variant?: "left" | "right";
   className?: string;
+  invertLogo?: boolean;
 }
 
 const TimelineCard = ({
   title,
+  logo,
   date,
-  description,
+  company,
+  technologies,
   variant = "left",
   className = "",
+  invertLogo = false,
 }: TimelineCardProps) => {
   const isMobile = useIsMobile();
   const showTwoColumns = useTimelineWidthChecker();
   let cardWidth = !showTwoColumns ? (isMobile ? 20 : 22) : 23; // 30
-  let cardHeight = !showTwoColumns ? (isMobile ? 15 : 17) : 13; // 20
+  let cardHeight = !showTwoColumns ? (isMobile ? 18 : 20) : 17; // 20
   if (!showTwoColumns && variant === "right") {
     variant = "left";
   }
@@ -30,7 +40,7 @@ const TimelineCard = ({
   const offset = 3;
   return (
     <ScrollWrapper
-      className={`!relative ${className} ${variant === "left" && "ml-[3rem]"}`}
+      className={`relative ${className} ${variant === "left" && "ml-[3rem]"}`}
       style={{ height: `${cardHeight}rem`, width: `${cardWidth + 4.8}rem` }}
     >
       <div
@@ -53,31 +63,51 @@ const TimelineCard = ({
       </div>
       <ArticleCard
         className={clsx(
-          ` ml-[3rem] rounded-md`,
+          ` ml-[3rem] rounded-md  flex flex-col  gap-1 overflow-hidden -mt-[20px] flex-1 p-5 text-foreground-text transition-colors duration-500 font-bold`,
           variant === "right" && "ml-0 mr-[3rem] border-r-2 border-r-primary",
           variant === "left" && "ml-[3rem] mr-0 border-l-2 border-l-primary"
         )}
         style={{ height: `${cardHeight}rem`, width: `${cardWidth}rem` }}
       >
-        <h3
-          className="text-xl font-bold text-foreground-title
+        <Image
+          src={logo}
+          alt="icon"
+          width={40}
+          height={40}
+          className={`self-end transition-all duration-500 ${invertLogo ? "invert dark:invert-0" : ""}`}
+        />
+        <div>
+          <h3
+            className="text-2xl text-foreground-title flex-1 transition-colors duration-500
       "
-        >
-          <h1 className="text-white">{showTwoColumns.toString()}</h1>
-          {/* {title} */}
-        </h3>
-        <h4
-          className="text-md font-bold text-foreground-text
+          >
+            {title}
+          </h3>
+        </div>
+        <div>
+          <h4
+            className="text-xl flex-1
       "
-        >
-          {date}
-        </h4>
-        <p
-          className="text-sm font-bold text-foreground-text
+          >
+            {date}
+          </h4>
+        </div>
+        <div>
+          <p
+            className="text-md flex-1
       "
-        >
-          {description}
-        </p>
+          >
+            {company}
+          </p>
+        </div>
+        <div>
+          <p
+            className="text-sm flex-1
+      "
+          >
+            Technologies: {technologies.join(", ")}
+          </p>
+        </div>
       </ArticleCard>
     </ScrollWrapper>
   );

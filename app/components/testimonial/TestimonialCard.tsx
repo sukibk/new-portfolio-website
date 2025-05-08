@@ -48,7 +48,7 @@ const TestimonialCard = ({ name, text, company }: TestimonialCardProps) => {
       animate={isInView ? "visible" : "hidden"}
       className=""
     >
-      <ArticleCard className="border-l-2 border-l-primary h-[18rem] w-[20rem] md:h-[21rem] md:w-[30rem] flex flex-col font-code !px-2 !py-0">
+      <ArticleCard className="border-l-2 border-l-primary h-[18rem] w-[20rem] md:h-[21rem] md:w-[30rem] flex flex-1 flex-col font-code px-2 py-0">
         <div className="flex flex-col gap-2 md:gap-2 justify-center h-full w-full">
           <p className="absolute top-3 left-3 text-foreground-text">{"{"}</p>
           <h3 className="pl-6 font-bold text-foreground-title text-md md:text-3xl">

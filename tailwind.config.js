@@ -10,7 +10,7 @@ export default {
       screens: {
         // Use rem for consistency
         nav: "100rem",
-        resume: "92rem",
+        resume: "94rem",
         "3xl": "122.5rem", // 1960px
         "4xl": "160rem", // 2560px
       },

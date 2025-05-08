@@ -1,6 +1,6 @@
 import { act } from "@testing-library/react";
 
-import useAppStore from "@/app/storage/zustandLocal";
+import { useAppStore } from "@/app/storage/zustandLocal";
 
 describe("Zustand", () => {
   it("should set introCompleted to true", () => {

@@ -6,10 +6,10 @@ import Button from "../layout/Button";
 
 const ResumeContainer = () => {
   return (
-    <aside className="h-full flex flex-1 flex-col items-center justify-center lg:max-w-[35rem] xs:self-center lg:self-start">
-      <ScrollWrapper className="relative pt-5 w-auto">
+    <aside className="hidden lg:flex flex-col max-w-[35rem] self-start">
+      <ScrollWrapper className="relative pt-4 w-auto">
         <AngledText side="left" className="left-0 absolute top-[8px]">
-          kubectl egt
+          kubectl get
         </AngledText>
         <h4 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-foreground-title">
           experiences/
@@ -17,7 +17,7 @@ const ResumeContainer = () => {
         </h4>
       </ScrollWrapper>
       <ScrollWrapper>
-        <div className="hidden lg:block w-[120mm] xl:w-[127mm] h-[160mm] xl:h-[174mm] rounded-lg  border-t-3 border-b-3 border-primary overflow-hidden mt-10">
+        <div className="hidden lg:block lg:sticky lg:top-[5rem] w-[120mm] xl:w-[127mm] h-[160mm] xl:h-[164mm] rounded-lg  border-t-3 border-b-3 border-primary overflow-hidden mt-10">
           <Resume />
         </div>
         <div className="lg:hidden">

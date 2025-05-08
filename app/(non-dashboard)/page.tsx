@@ -6,6 +6,7 @@ import TestimonialsPage from "@/app/(non-dashboard)/testimonial/Section";
 // import SkillsPage from "@/app/(non-dashboard)/skills/page";
 import NavbarLayout from "@/app/components/navbar/NavbarLayout";
 import useSectionObserver from "@/app/hooks/useSectionObserver";
+
 import TimelinePage from "./timeline/Section";
 
 const NonDashboardSetup = () => {
@@ -17,6 +18,7 @@ const NonDashboardSetup = () => {
       <AboutPage />
       <TestimonialsPage />
       <TimelinePage />
+      <AboutPage />
     </>
   );
 };

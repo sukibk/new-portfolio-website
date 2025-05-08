@@ -1,4 +1,5 @@
 import { useIsMobile } from "@/app/hooks/useIsMobile";
+
 import TimelineCard from "./TimelineCard";
 import TimelineContainer from "./TimelineContainer";
 

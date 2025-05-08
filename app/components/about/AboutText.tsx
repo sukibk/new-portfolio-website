@@ -8,7 +8,7 @@ const AboutText = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
   return (
-    <ArticleCard>
+    <ArticleCard className="flex-1 px-6 py-10 md:py-16">
       <ScrollWrapper>
         <AngledText side="left" className="">
           process.env

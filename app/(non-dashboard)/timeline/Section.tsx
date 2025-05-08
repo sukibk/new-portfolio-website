@@ -4,8 +4,8 @@ import { useRef } from "react";
 
 import HeroImage from "@/app/components/hero/HeroImage";
 import HeroText from "@/app/components/hero/HeroText";
-import TimelineTree from "@/app/components/timeline/TimelineTree";
 import ResumeContainer from "@/app/components/timeline/ResumeContainer";
+import TimelineTree from "@/app/components/timeline/TimelineTree";
 
 const TimelinePage = () => {
   return (
