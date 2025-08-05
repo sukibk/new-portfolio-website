@@ -3,14 +3,25 @@ import { TimelineCardProps } from "../components/timeline/TimelineCard";
 
 export const workExperiences: TimelineCardProps[] = [
   {
+    title: "Fullstack Developer",
+    company: "Vectal.ai",
+    date: "MAY 2025 - PRESENT",
+    technologies: timelineTechnologies.vectal,
+    logo: "/images/timeline-section/vectal-marko-sudar-fullstack-developer.png",
+    variant: "left",
+    className:
+      "resume:ml-0 resume:col-start-2 resume:col-span-1 resume:row-start-1 transition-all duration-500",
+    invertLogo: true,
+  },
+  {
     title: "Software Engineer",
     company: "AUVSI",
     date: "JAN 2024 - PRESENT",
     technologies: timelineTechnologies.auvsi,
     logo: "/images/timeline-section/auvsi-marko-sudar-aws-gcp-azure.png",
-    variant: "left",
+    variant: "right",
     className:
-      "resume:ml-0 resume:col-start-2 resume:col-span-1 resume:row-start-1 transition-all duration-500",
+      "resume:col-start-1 resume:col-span-1 resume:justify-self-end resume:row-start-2 resume:mr-[1.25rem] transition-all duration-500",
   },
   {
     title: "Web Developer Intern",
@@ -18,9 +29,9 @@ export const workExperiences: TimelineCardProps[] = [
     date: "MAY 2024 - AUG 2024",
     technologies: timelineTechnologies.oracleWebIntern,
     logo: "/images/timeline-section/oracle-marko-sudar-software-engineer.png",
-    variant: "right",
+    variant: "left",
     className:
-      "resume:col-start-1 resume:col-span-1 resume:justify-self-end resume:row-start-2 resume:mr-[1.25rem] transition-all duration-500",
+      "resume:ml-0 resume:col-start-2 resume:col-span-1 resume:row-start-3 transition-all duration-500",
   },
   {
     title: "Cloud Engineer Intern",
@@ -28,9 +39,9 @@ export const workExperiences: TimelineCardProps[] = [
     date: "MAY 2024 - AUG 2024",
     technologies: timelineTechnologies.oracleCloudIntern,
     logo: "/images/timeline-section/oracle-marko-sudar-software-engineer.png",
-    variant: "left",
+    variant: "right",
     className:
-      "resume:ml-0 resume:col-start-2 resume:col-span-1 resume:row-start-3 transition-all duration-500",
+      "resume:col-start-1 resume:col-span-1 resume:justify-self-end resume:row-start-4 resume:mr-[1.25rem] transition-all duration-500",
   },
   {
     title: "Director of IT",
@@ -38,9 +49,9 @@ export const workExperiences: TimelineCardProps[] = [
     date: "MAY 2022 - AUGUST  2022",
     technologies: timelineTechnologies.blackLake,
     logo: "/images/timeline-section/black-lake-marko-sudar-ai-machine-learning-mcp.png",
-    variant: "right",
+    variant: "left",
     className:
-      "resume:col-start-1 resume:col-span-1 resume:justify-self-end resume:row-start-4 resume:mr-[1.25rem] transition-all duration-500",
+      "resume:ml-0 resume:col-start-2 resume:col-span-1 resume:row-start-5 transition-all duration-500",
     invertLogo: true,
   },
   {
@@ -49,8 +60,8 @@ export const workExperiences: TimelineCardProps[] = [
     date: "JAN 2021 - AUGUST  2021",
     technologies: timelineTechnologies.feral,
     logo: "/images/timeline-section/feral-marko-sudar-ai-agents-llm-react-next-js-node-js.png",
-    variant: "left",
+    variant: "right",
     className:
-      "resume:ml-0 resume:col-start-2 resume:col-span-1 resume:row-start-5 transition-all duration-500",
+      "resume:col-start-1 resume:col-span-1 resume:justify-self-end resume:row-start-6 resume:mr-[1.25rem] transition-all duration-500",
   },
 ];
