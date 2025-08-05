@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`IntroText > renders without crashing 1`] = `
+<div>
+  <p
+    class="index-module_type__E-SaG h-[8rem] p-4 !text-foreground-title lg:max-w-1/2
+    font-light font-code"
+    style="font-size: 2em; display: inline-block; color: white;"
+  />
+</div>
+`;

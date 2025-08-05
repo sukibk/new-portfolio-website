@@ -13,7 +13,7 @@ interface State {
   theme: Theme;
 }
 
-// Create the ThemeContext to hold theme state and dispatch fucntion
+// Create the ThemeContext to hold theme state and dispatch function
 const ThemeContext = createContext<{
   state: State;
   dispatch: React.Dispatch<Action>;

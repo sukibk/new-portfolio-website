@@ -49,3 +49,5 @@ node_modules/
 
 #Vitest
 /coverage
+.idea/
+.env*.local

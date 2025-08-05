@@ -1,5 +1,6 @@
 // tailwind.config.js
-module.exports = {
+export default {
+  darkMode: "class", // Must-have for dark mode to function properly
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
     "node_modules/tailwind-breakpoint-debugger/**/*.{js,ts,jsx,tsx}",
@@ -8,7 +9,10 @@ module.exports = {
     extend: {
       screens: {
         // Use rem for consistency
+        // Used for starting value of normal phones (phones smaller than this are really small) (wp = widephone)
+        wp: "26.8rem",
         nav: "100rem",
+        resume: "94rem",
         "3xl": "122.5rem", // 1960px
         "4xl": "160rem", // 2560px
       },

@@ -13,7 +13,8 @@ import { TypeAnimation } from "react-type-animation";
  */
 const IntroText = () => (
   <TypeAnimation
-    className="h-[8rem] p-4 !text-foreground-title lg:max-w-1/2 font-light"
+    className="h-[8rem] p-4 !text-foreground-title lg:max-w-1/2
+    font-light font-code"
     sequence={[
       "Hi!",
       1000,

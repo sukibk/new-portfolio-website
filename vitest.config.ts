@@ -1,4 +1,5 @@
 import react from "@vitejs/plugin-react";
+import { DEFAULT_SEGMENT_KEY } from "next/dist/shared/lib/segment";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { defineConfig } from "vitest/config";
 
