@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
 import Button from "@/app/components/layout/Button";
-import { ht_childVariants } from "@/app/utils/framer-motion/variants";
 import DownloadResumeButton from "@/app/components/timeline/DownloadResumeButton";
+import { ht_childVariants } from "@/app/utils/framer-motion/variants";
 
 interface HeroCallToActionProps {
   className?: string;

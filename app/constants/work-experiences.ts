@@ -1,5 +1,5 @@
-import { timelineTechnologies } from "./technologies";
 import { TimelineCardProps } from "../components/timeline/TimelineCard";
+import { timelineTechnologies } from "./technologies";
 
 export const workExperiences: TimelineCardProps[] = [
   {

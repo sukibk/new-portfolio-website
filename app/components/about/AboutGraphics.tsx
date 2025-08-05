@@ -2,12 +2,12 @@ import { DndContext, type DragEndEvent } from "@dnd-kit/core";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 
+import CurrentTechStackDrop from "@/app/components/about/CurrentTechStackDroppable";
 import TechnologiesContainer from "@/app/components/about/tech/TechnologiesContainer";
 import TechSwitch from "@/app/components/about/tech/TechSwitch";
 import ScrollWrapper from "@/app/components/layout/ScrollWrapper";
 import AngledText from "@/app/components/shared/AngledText";
 import { TECH_CONSTS } from "@/app/constants/tech";
-import CurrentTechStackDrop from "@/app/components/about/CurrentTechStackDroppable";
 
 interface AboutGraphicsProps {
   children?: React.ReactNode;

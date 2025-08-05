@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 /**
  * Custom hook for browser detection.
@@ -57,7 +57,7 @@ const useBrowserDetection = () => {
       const isOpera = /opr/.test(userAgent);
 
       // More specialized browser detection
-      const isBrave = isChrome && window.navigator.brave !== undefined;
+      const isBrave = isChrome && (window.navigator as any).brave !== undefined;
       const isYandex = /yabrowser/.test(userAgent);
 
       // Device type detection

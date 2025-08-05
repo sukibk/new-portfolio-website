@@ -1,6 +1,7 @@
+import { workExperiences } from "@/app/constants/work-experiences";
+
 import DownloadResumeButton from "./DownloadResumeButton";
 import TimelineCard from "./TimelineCard";
-import { workExperiences } from "@/app/constants/work-experiences";
 
 /**
  * TimelineContainer component

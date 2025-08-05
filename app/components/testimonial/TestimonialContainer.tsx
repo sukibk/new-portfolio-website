@@ -7,8 +7,8 @@ import {
 } from "react";
 
 import TestimonialCard from "@/app/components/testimonial/TestimonialCard";
-import { useIsMobile } from "@/app/hooks/useIsMobile";
 import { testimonials } from "@/app/constants/testimonials";
+import { useIsMobile } from "@/app/hooks/useIsMobile";
 
 type TestimonialContainerProps = {
   isScrolling: boolean;

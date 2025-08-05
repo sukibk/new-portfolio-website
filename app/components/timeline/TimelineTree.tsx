@@ -1,8 +1,8 @@
 import { useIsMobile } from "@/app/hooks/useIsMobile";
 
+import DownloadResumeButton from "./DownloadResumeButton";
 import TimelineCard from "./TimelineCard";
 import TimelineContainer from "./TimelineContainer";
-import DownloadResumeButton from "./DownloadResumeButton";
 
 const TimelineTree = () => {
   const isMobile = useIsMobile();

@@ -1,9 +1,11 @@
 import Image from "next/image";
-import Resume from "./Resume";
-import AngledText from "../shared/AngledText";
-import ScrollWrapper from "../layout/ScrollWrapper";
-import DownloadResumeButton from "./DownloadResumeButton";
+
 import useCheckBrowser from "@/app/hooks/useCheckBrowser";
+
+import ScrollWrapper from "../layout/ScrollWrapper";
+import AngledText from "../shared/AngledText";
+import DownloadResumeButton from "./DownloadResumeButton";
+import Resume from "./Resume";
 
 const ResumeContainer = () => {
   const { isSafari, isFirefox } = useCheckBrowser();

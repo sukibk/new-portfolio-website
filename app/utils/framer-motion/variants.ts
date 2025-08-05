@@ -8,13 +8,13 @@ const subtleScroll = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
+    transition: { duration: 0.4, ease: "easeOut" as const },
   },
   exit: {
     opacity: 0,
     y: -20,
 
-    transition: { duration: 0.25, ease: "easeIn" },
+    transition: { duration: 0.25, ease: "easeIn" as const },
   },
 };
 
@@ -54,7 +54,7 @@ const hi_childrenVariants = {
     scale: 1,
     transition: {
       duration: 0.8,
-      ease: "easeOut",
+      ease: "easeOut" as const,
     },
   },
 };
@@ -65,13 +65,13 @@ const techCardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" },
+    transition: { duration: 0.4, ease: "easeOut" as const },
   },
   exit: {
     opacity: 0,
     y: -20,
 
-    transition: { duration: 0.25, ease: "easeIn" },
+    transition: { duration: 0.25, ease: "easeIn" as const },
   },
 };
 

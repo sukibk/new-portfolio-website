@@ -1,11 +1,11 @@
 import clsx from "clsx";
+import Image from "next/image";
 
 import { useIsMobile } from "@/app/hooks/useIsMobile";
 import { useTimelineWidthChecker } from "@/app/hooks/useTimelineWidthChecker";
 
 import ArticleCard from "../layout/ArticleCard";
 import ScrollWrapper from "../layout/ScrollWrapper";
-import Image from "next/image";
 
 export interface TimelineCardProps
   extends React.HTMLAttributes<HTMLDivElement> {

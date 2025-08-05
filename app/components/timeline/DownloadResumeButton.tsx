@@ -1,8 +1,9 @@
 "use client";
 
-import Button from "../layout/Button";
 import clsx from "clsx";
 import { useState } from "react";
+
+import Button from "../layout/Button";
 
 interface DownloadResumeButtonProps
   extends React.HTMLAttributes<HTMLDivElement> {
