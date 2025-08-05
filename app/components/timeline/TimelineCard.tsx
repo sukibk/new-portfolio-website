@@ -19,6 +19,7 @@ export interface TimelineCardProps
   invertLogo?: boolean;
 }
 
+// TODO: Wind fix for small phone screens
 const TimelineCard = ({
   title,
   logo,
@@ -31,21 +32,24 @@ const TimelineCard = ({
 }: TimelineCardProps) => {
   const isMobile = useIsMobile();
   const showTwoColumns = useTimelineWidthChecker();
-  let cardWidth = !showTwoColumns ? (isMobile ? 20 : 22) : 23; // 30
-  let cardHeight = !showTwoColumns ? (isMobile ? 18 : 20) : 17; // 20
+  let cardWidth = !showTwoColumns ? (isMobile ? 20 : 20) : 23.5; // 30
+  let cardHeight = !showTwoColumns ? (isMobile ? 19 : 20) : 17; // 20
   if (!showTwoColumns && variant === "right") {
     variant = "left";
   }
 
-  const offset = 3;
   return (
     <ScrollWrapper
-      className={`relative ${className} ${variant === "left" && "ml-[3rem]"}`}
+      className={clsx(
+        "relative", // TODO: Fix for small widths should go here
+        variant === "left" && "ml-[3rem]",
+        className
+      )}
       style={{ height: `${cardHeight}rem`, width: `${cardWidth + 4.8}rem` }}
     >
       <div
         className={clsx(
-          `flex items-center absolute top-[${offset}rem] `,
+          `flex items-center absolute`,
           variant === "left" && "-left-[16px]",
           variant === "right" && "-right-[35.5px] flex-row-reverse"
         )}
@@ -63,7 +67,7 @@ const TimelineCard = ({
       </div>
       <ArticleCard
         className={clsx(
-          ` ml-[3rem] rounded-md  flex flex-col  gap-1 overflow-hidden -mt-[20px] flex-1 p-5 text-foreground-text transition-colors duration-500 font-bold`,
+          ` ml-[3rem] rounded-md  flex flex-col  gap-1 overflow-hidden -mt-[20px] flex-1 px-3 !py-5 text-foreground-text transition-colors duration-500 font-bold`,
           variant === "right" && "ml-0 mr-[3rem] border-r-2 border-r-primary",
           variant === "left" && "ml-[3rem] mr-0 border-l-2 border-l-primary"
         )}
@@ -89,7 +93,7 @@ const TimelineCard = ({
             className="text-xl flex-1
       "
           >
-            {date}
+            {company}
           </h4>
         </div>
         <div>
@@ -97,7 +101,7 @@ const TimelineCard = ({
             className="text-md flex-1
       "
           >
-            {company}
+            {date}
           </p>
         </div>
         <div>

@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 import Button from "@/app/components/layout/Button";
 import { ht_childVariants } from "@/app/utils/framer-motion/variants";
+import DownloadResumeButton from "@/app/components/timeline/DownloadResumeButton";
 
 interface HeroCallToActionProps {
   className?: string;
@@ -22,9 +23,7 @@ const HeroCallToAction = ({ className = "" }: HeroCallToActionProps) => {
       variants={ht_childVariants}
       className={`flex  w-[400px] justify-center gap-16 items-center mt-10 z-50 ${className}`}
     >
-      <Button variant="primary" onClick={() => alert("Hey")}>
-        DOWNLOAD RESUME
-      </Button>
+      <DownloadResumeButton variant="alwaysDisplay" />
       <Button variant="secondary">CONTACT ME</Button>
     </motion.div>
   );

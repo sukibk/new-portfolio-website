@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 
 import NavLink from "@/app/components/navbar/NavLink";
+import { NAVIGATION_MENU } from "@/app/constants/navigation";
 
 export interface NavbarNavigationItemProps {
   showMenu: boolean;
@@ -8,8 +9,6 @@ export interface NavbarNavigationItemProps {
 }
 
 const MotionLink = motion(NavLink);
-
-const NAVIGATION_MENU = ["HOME", "ABOUT", "PROJECT", "CONTACT"];
 
 const NavbarNavigationItems = ({
   showMenu = false,

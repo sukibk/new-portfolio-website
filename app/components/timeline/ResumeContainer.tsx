@@ -2,27 +2,29 @@ import Image from "next/image";
 import Resume from "./Resume";
 import AngledText from "../shared/AngledText";
 import ScrollWrapper from "../layout/ScrollWrapper";
-import Button from "../layout/Button";
+import DownloadResumeButton from "./DownloadResumeButton";
+import useCheckBrowser from "@/app/hooks/useCheckBrowser";
 
 const ResumeContainer = () => {
+  const { isSafari, isFirefox } = useCheckBrowser();
+
   return (
-    <aside className="hidden lg:flex flex-col max-w-[35rem] self-start">
-      <ScrollWrapper className="relative pt-4 w-auto">
-        <AngledText side="left" className="left-0 absolute top-[8px]">
+    <aside className="relative h-full lg:flex lg:sticky lg:flex-col lg:top-[5rem] self-center pb-15 lg:pb-0 items-center max-w-[35rem] lg:self-start">
+      <ScrollWrapper className="pt-5">
+        <AngledText side="left" className="left-0 absolute top-[0.5rem]">
           kubectl get
         </AngledText>
-        <h4 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-foreground-title">
+        {/* Font for xl was 6xl but it braks on Firefox se I set it to 3.5rem */}
+        <h4 className="text-3xl md:text-4xl lg:text-5xl xl:text-[3.5rem] text-foreground-title ">
           experiences/
           <span className="text-primary">Timeline</span>
         </h4>
       </ScrollWrapper>
-      <ScrollWrapper>
-        <div className="hidden lg:block lg:sticky lg:top-[5rem] w-[120mm] xl:w-[127mm] h-[160mm] xl:h-[164mm] rounded-lg  border-t-3 border-b-3 border-primary overflow-hidden mt-10">
+      <ScrollWrapper className="flex flex-col items-center sticky top-[5rem]">
+        <div className="hidden lg:block w-[28.5rem] xl:w-[30rem] h-[37rem] xl:h-[38.68rem] rounded-lg  border-t-3 border-b-3 border-primary overflow-hidden mt-10">
           <Resume />
         </div>
-        <div className="lg:hidden">
-          <Button variant="primary">Download Resume</Button>
-        </div>
+        <DownloadResumeButton variant="displayLarge" className="mt-10" />
       </ScrollWrapper>
     </aside>
   );

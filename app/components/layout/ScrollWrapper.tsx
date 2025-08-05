@@ -26,7 +26,7 @@ interface ScrollWrapperProps extends HTMLMotionProps<"div"> {
  *   <YourContent />
  * </ScrollWrapper>
  */
-
+// TODO: Add support for custom variants
 const ScrollWrapper = ({ children, ...props }: ScrollWrapperProps) => {
   return (
     <motion.div

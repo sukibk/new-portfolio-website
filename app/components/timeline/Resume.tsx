@@ -1,7 +1,9 @@
 const Resume = () => {
   return (
-    <div className="w-full h-[150mm] xl:h-[164mm]   text-foreground-title p-[2mm] xl:p-[3mm] text-[8px] xl:text-[9px] leading-[1.2] font-arial overflow-hidden rounded-lg transition-colors duration-500">
-      <h1 className="text-center font-bold text-[10px] mb-1">Marko Sudar</h1>
+    <div className="w-full h-[35.4rem] xl:h-[38.68rem] text-foreground-title p-[0.47rem] xl:p-[0.71rem] text-[0.5rem] xl:text-[0.5625rem] leading-[1.2] font-arial overflow-hidden rounded-lg transition-colors duration-500">
+      <h1 className="text-center font-bold text-[0.625rem] mb-1">
+        Marko Sudar
+      </h1>
       <p className="text-center mb-2">
         329 Summit Ave • Salisbury, NC 28144 • mjsudar21@catawba.edu • (336)
         940-9851

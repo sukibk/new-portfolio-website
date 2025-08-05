@@ -45,10 +45,10 @@ export const workExperiences: TimelineCardProps[] = [
   },
   {
     title: "Full Stack Developer",
-    company: "Feral",
+    company: "Feral Digital",
     date: "JAN 2021 - AUGUST  2021",
     technologies: timelineTechnologies.feral,
-    logo: "/images/timeline-section/feral-marko-sudar-aws-gcp-azure.png",
+    logo: "/images/timeline-section/feral-marko-sudar-ai-agents-llm-react-next-js-node-js.png",
     variant: "left",
     className:
       "resume:ml-0 resume:col-start-2 resume:col-span-1 resume:row-start-5 transition-all duration-500",

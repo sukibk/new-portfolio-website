@@ -9,6 +9,8 @@ export default {
     extend: {
       screens: {
         // Use rem for consistency
+        // Used for starting value of normal phones (phones smaller than this are really small) (wp = widephone)
+        wp: "26.8rem",
         nav: "100rem",
         resume: "94rem",
         "3xl": "122.5rem", // 1960px

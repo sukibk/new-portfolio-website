@@ -6,7 +6,7 @@ interface CurrentTechStackDropProps {
   droppedTech: { id: number; value: string };
 }
 
-export default function CurrentTechStackDropProps({
+export default function CurrentTechStackDrop({
   droppedTech,
 }: CurrentTechStackDropProps) {
   const { isOver, setNodeRef } = useDroppable({ id: "droppable" });
