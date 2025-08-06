@@ -2,6 +2,7 @@
 
 import AboutPage from "@/app/(non-dashboard)/about/Section";
 import HeroPage from "@/app/(non-dashboard)/hero/Section";
+import ProjectsPage from "@/app/(non-dashboard)/projects/Section";
 import TestimonialsPage from "@/app/(non-dashboard)/testimonial/Section";
 import useCheckBrowser from "@/app/hooks/useCheckBrowser";
 // import SkillsPage from "@/app/(non-dashboard)/skills/page";
@@ -19,8 +20,9 @@ const NonDashboardSetup = () => {
     <>
       <HeroPage />
       <AboutPage />
-      <TestimonialsPage />
       <TimelinePage />
+      <ProjectsPage />
+      <TestimonialsPage />
     </>
   );
 };
