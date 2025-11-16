@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   const url =
-    "https://yxlloo4kwr8sevnc.public.blob.vercel-storage.com/MarkoSudarResume-Ieq5915FO6v7U4IczUBbnVh06YmcK8.pdf";
+    "https://yxlloo4kwr8sevnc.public.blob.vercel-storage.com/MarkoSudar_Resume.pdf";
 
   const res = await fetch(url);
   const buffer = await res.arrayBuffer();
