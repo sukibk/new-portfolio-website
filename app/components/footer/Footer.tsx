@@ -1,6 +1,6 @@
 "use client";
 
-import { FaGithub, FaLinkedin, FaEnvelope, FaHeart } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaHeart, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -29,14 +29,16 @@ const Footer = () => {
             </h3>
             <p className="text-foreground-text/70 font-code text-sm leading-relaxed">
               <span className="text-primary/70">{`// `}</span>
-              Full-stack developer passionate about building innovative digital experiences.
+              Full-stack developer passionate about building innovative digital
+              experiences.
             </p>
           </div>
 
           {/* Navigation links */}
           <div className="space-y-4">
             <h4 className="font-code text-sm text-foreground-text/50">
-              <span className="text-primary">{`{`}</span> navigation <span className="text-primary">{`}`}</span>
+              <span className="text-primary">{`{`}</span> navigation{" "}
+              <span className="text-primary">{`}`}</span>
             </h4>
             <nav className="grid grid-cols-2 gap-2">
               {navLinks.map((link) => (
@@ -54,7 +56,8 @@ const Footer = () => {
           {/* Connect section */}
           <div className="space-y-4">
             <h4 className="font-code text-sm text-foreground-text/50">
-              <span className="text-primary">{`{`}</span> connect <span className="text-primary">{`}`}</span>
+              <span className="text-primary">{`{`}</span> connect{" "}
+              <span className="text-primary">{`}`}</span>
             </h4>
             <div className="flex gap-4">
               <a
@@ -102,14 +105,16 @@ const Footer = () => {
             {currentYear} Marko Sudar. All rights reserved.
           </p>
           <p className="text-foreground-text/50 font-code text-xs flex items-center gap-1">
-            Built with <FaHeart className="w-3 h-3 text-primary" /> using Next.js & Tailwind
+            Built with <FaHeart className="w-3 h-3 text-primary" /> using
+            Next.js & Tailwind
           </p>
         </div>
 
         {/* Code-style closing tag */}
         <div className="text-center mt-8">
           <p className="text-foreground-text/30 font-code text-xs">
-            {`</>`} <span className="text-primary/50">end of portfolio</span> {`</>`}
+            {`</>`} <span className="text-primary/50">end of portfolio</span>{" "}
+            {`</>`}
           </p>
         </div>
       </div>

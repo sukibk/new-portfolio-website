@@ -12,8 +12,10 @@ const TimelineContainer = () => {
     <article className="flex flex-col items-center justify-center -ml-[3.2rem] md:ml-0">
       <div className="relative grid grid-cols-1 gap-y-15 md:gap-y-20 resume:grid-cols-2 transition-all duration-500">
         {/* Vertical line */}
-        <div className="absolute top-0 bottom-0 left-[3rem] resume:left-1/2 w-[0.3rem] -translate-x-1/2 transition-all duration-500
-          bg-gradient-to-b from-primary/20 via-foreground-title/40 to-primary/20 rounded-full" />
+        <div
+          className="absolute top-0 bottom-0 left-[3rem] resume:left-1/2 w-[0.3rem] -translate-x-1/2 transition-all duration-500
+          bg-gradient-to-b from-primary/20 via-foreground-title/40 to-primary/20 rounded-full"
+        />
         {/* Timeline Cards */}
         {workExperiences.map((experience, index) => (
           <TimelineCard

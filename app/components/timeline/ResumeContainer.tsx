@@ -23,11 +23,13 @@ const ResumeContainer = () => {
         </h4>
       </ScrollWrapper>
       <ScrollWrapper className="flex flex-col items-center sticky top-[5rem]">
-        <div className="hidden lg:block w-[28.5rem] xl:w-[30rem] h-[37rem] xl:h-[38.68rem] rounded-2xl
+        <div
+          className="hidden lg:block w-[28.5rem] xl:w-[30rem] h-[37rem] xl:h-[38.68rem] rounded-2xl
           border-t-3 border-b-3 border-primary overflow-hidden mt-10
           shadow-2xl shadow-black/10 dark:shadow-black/30
           ring-1 ring-foreground-title/5 dark:ring-white/5
-          bg-background/50 backdrop-blur-sm">
+          bg-background/50 backdrop-blur-sm"
+        >
           <Resume />
         </div>
         <DownloadResumeButton variant="displayLarge" className="mt-10" />

@@ -7,8 +7,7 @@ import { useTimelineWidthChecker } from "@/app/hooks/useTimelineWidthChecker";
 import ArticleCard from "../layout/ArticleCard";
 import ScrollWrapper from "../layout/ScrollWrapper";
 
-export interface TimelineCardProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+export interface TimelineCardProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
   date: string;
   logo: string;
@@ -106,7 +105,9 @@ const TimelineCard = ({
             {technologies.map((tech, i) => (
               <span key={tech}>
                 <span className="text-primary/80">{tech}</span>
-                {i < technologies.length - 1 && <span className="text-foreground-text/40">, </span>}
+                {i < technologies.length - 1 && (
+                  <span className="text-foreground-text/40">, </span>
+                )}
               </span>
             ))}
             <span className="text-primary/50">]</span>

@@ -25,9 +25,11 @@ const ProjectCard = ({ project, index, onClick }: ProjectCardProps) => {
       className="h-full cursor-pointer"
       onClick={onClick}
     >
-      <ArticleCard className="h-full border border-foreground-text/10 dark:border-white/5 hover:border-primary/40
+      <ArticleCard
+        className="h-full border border-foreground-text/10 dark:border-white/5 hover:border-primary/40
         transition-all duration-300 hover:shadow-xl hover:shadow-primary/10
-        relative overflow-hidden group">
+        relative overflow-hidden group"
+      >
         {/* Subtle gradient overlay on hover */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
@@ -35,7 +37,10 @@ const ProjectCard = ({ project, index, onClick }: ProjectCardProps) => {
           {/* Header with angled text and title */}
           <div className="flex items-start justify-between mb-2">
             <div className="relative">
-              <AngledText side="left" className="absolute -top-[0.8rem] left-0 -mb-2">
+              <AngledText
+                side="left"
+                className="absolute -top-[0.8rem] left-0 -mb-2"
+              >
                 const
               </AngledText>
               <h3 className="text-foreground-title text-sm md:text-base font-bold">
@@ -70,7 +75,9 @@ const ProjectCard = ({ project, index, onClick }: ProjectCardProps) => {
                 {project.technologies.slice(0, 5).map((tech, i) => (
                   <span key={i} className="text-primary/90">
                     &quot;{tech}&quot;
-                    {i < Math.min(4, project.technologies.length - 1) && <span className="text-foreground-text/40">,</span>}
+                    {i < Math.min(4, project.technologies.length - 1) && (
+                      <span className="text-foreground-text/40">,</span>
+                    )}
                   </span>
                 ))}
                 {project.technologies.length > 5 && (
@@ -121,13 +128,15 @@ const ProjectCard = ({ project, index, onClick }: ProjectCardProps) => {
           {/* Closing bracket with status badge */}
           <div className="mt-2 flex items-center justify-between">
             <span className="text-foreground-text/60">{"}"}</span>
-            <span className={`px-2 py-0.5 text-[0.6rem] rounded-lg font-semibold ${
-              project.status === "completed"
-                ? "bg-green-500/15 text-green-500 ring-1 ring-green-500/30"
-                : project.status === "in-progress"
-                ? "bg-yellow-500/15 text-yellow-500 ring-1 ring-yellow-500/30"
-                : "bg-blue-500/15 text-blue-500 ring-1 ring-blue-500/30"
-            }`}>
+            <span
+              className={`px-2 py-0.5 text-[0.6rem] rounded-lg font-semibold ${
+                project.status === "completed"
+                  ? "bg-green-500/15 text-green-500 ring-1 ring-green-500/30"
+                  : project.status === "in-progress"
+                    ? "bg-yellow-500/15 text-yellow-500 ring-1 ring-yellow-500/30"
+                    : "bg-blue-500/15 text-blue-500 ring-1 ring-blue-500/30"
+              }`}
+            >
               {project.status}
             </span>
           </div>

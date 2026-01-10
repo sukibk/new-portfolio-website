@@ -58,7 +58,7 @@ const HeroText = () => {
         className="text-base md:text-lg xl:text-3xl text-foreground-text leading-10
            transition-colors duration-500"
       >
-        I'm a{" "}
+        I&apos;m a{" "}
         <span
           className="align-middle inline-flex items-center bg-gradient-to-r from-gray-800/80 to-gray-900/80
             dark:from-gray-700/60 dark:to-gray-800/60 italic text-[#f8f8ff] dark:text-gray-200

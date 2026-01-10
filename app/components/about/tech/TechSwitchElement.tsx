@@ -77,7 +77,8 @@ const TechSwitchElement = ({
       className={cn(
         "relative text-foreground-title rounded-md p-3 shadow-md cursor-grab touch-none",
         variant === "active" && "w-[100px] text-center xl:text-xl",
-        variant === "non-active" && "border-2 border-dashed border-foreground-title/30 dark:border-white/30 hover:bg-primary hover:text-white hover:border-primary"
+        variant === "non-active" &&
+          "border-2 border-dashed border-foreground-title/30 dark:border-white/30 hover:bg-primary hover:text-white hover:border-primary"
       )}
       onClick={() => setActiveIndex(id)}
     >

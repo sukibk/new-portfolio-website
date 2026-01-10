@@ -8,10 +8,14 @@ const TestimonialTitle = () => {
         fetch
       </AngledText>
       <h4 className="text-3xl md:text-4xl lg:text-6xl text-foreground-title">
-        <span className="text-sm lg:text-md text-foreground-text/50 font-code">https://_</span>
+        <span className="text-sm lg:text-md text-foreground-text/50 font-code">
+          https://_
+        </span>
         myTest
         <span className="text-primary">imonials</span>
-        <span className="text-sm lg:text-md text-foreground-text/50 font-code">.com</span>
+        <span className="text-sm lg:text-md text-foreground-text/50 font-code">
+          .com
+        </span>
       </h4>
     </ScrollWrapper>
   );

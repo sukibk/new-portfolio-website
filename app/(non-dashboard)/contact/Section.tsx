@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
+import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
 import ArticleCard from "@/app/components/layout/ArticleCard";
 import Button from "@/app/components/layout/Button";
@@ -47,9 +47,13 @@ const ContactSection = () => {
           async
         </AngledText>
         <h4 className="text-3xl md:text-4xl lg:text-6xl text-foreground-title">
-          <span className="text-sm lg:text-md text-foreground-text/50 font-code">await </span>
+          <span className="text-sm lg:text-md text-foreground-text/50 font-code">
+            await{" "}
+          </span>
           send<span className="text-primary">Message</span>
-          <span className="text-sm lg:text-md text-foreground-text/50 font-code">()</span>
+          <span className="text-sm lg:text-md text-foreground-text/50 font-code">
+            ()
+          </span>
         </h4>
       </ScrollWrapper>
 
@@ -57,7 +61,7 @@ const ContactSection = () => {
       <div className="font-code text-foreground-text/60 dark:text-foreground-text/50 text-xs md:text-sm mb-8 space-y-1">
         <p className="text-center">
           <span className="text-primary/70">{`// `}</span>
-          Let's build something amazing together
+          Let&apos;s build something amazing together
         </p>
       </div>
 
@@ -68,10 +72,12 @@ const ContactSection = () => {
 
           {submitted ? (
             <div className="text-center py-8 font-code">
-              <p className="text-primary text-xl mb-2">{"{"} status: "success" {"}"}</p>
+              <p className="text-primary text-xl mb-2">
+                {`{ status: "success" }`}
+              </p>
               <p className="text-foreground-text/70">
                 <span className="text-primary/70">{`// `}</span>
-                Message sent! I'll get back to you soon.
+                Message sent! I&apos;ll get back to you soon.
               </p>
             </div>
           ) : (

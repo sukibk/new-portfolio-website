@@ -49,8 +49,10 @@ const NavbarNavigationItems = ({
               <span className="text-primary/50 text-lg ml-1">{`}`}</span>
 
               {/* Underline effect */}
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary
-                group-hover:w-full transition-all duration-300" />
+              <span
+                className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary
+                group-hover:w-full transition-all duration-300"
+              />
             </motion.a>
           ))}
         </div>

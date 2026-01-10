@@ -42,19 +42,19 @@ const AboutText = () => {
 
       <ScrollWrapper className="text-foreground-text font-code text-base md:text-lg leading-relaxed space-y-4 transition-colors duration-500">
         <p className="relative pl-4 border-l-2 border-primary/30 hover:border-primary/60 transition-colors duration-300">
-          Hey, I'm Marko Sudar — a full-stack developer passionate about turning
-          bold ideas into seamless digital experiences. From the Backend,
-          accross the Frontend, to the Cloud, and AI integration, I build across
-          the stack with a love for clean, scalable code.
+          Hey, I&apos;m Marko Sudar — a full-stack developer passionate about
+          turning bold ideas into seamless digital experiences. From the
+          Backend, accross the Frontend, to the Cloud, and AI integration, I
+          build across the stack with a love for clean, scalable code.
         </p>
         <p className="relative pl-4 border-l-2 border-primary/30 hover:border-primary/60 transition-colors duration-300">
-          I'm especially into drones, uncrewed systems, and using cloud tools to
-          power big ideas. When I'm not building, I'm on the tennis court or
-          exploring how AI can change the way we live and work.
+          I&apos;m especially into drones, uncrewed systems, and using cloud
+          tools to power big ideas. When I&apos;m not building, I&apos;m on the
+          tennis court or exploring how AI can change the way we live and work.
         </p>
         <p className="text-primary/80 font-semibold text-lg md:text-xl mt-6">
           <span className="text-foreground-text/50">{`> `}</span>
-          Let's build something awesome.
+          Let&apos;s build something awesome.
           <span className="inline-block w-2 h-5 bg-primary/60 ml-1 animate-pulse" />
         </p>
       </ScrollWrapper>

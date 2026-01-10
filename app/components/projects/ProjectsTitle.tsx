@@ -8,11 +8,20 @@ const ProjectsTitle = () => {
         export
       </AngledText>
       <h4 className="text-3xl md:text-4xl lg:text-6xl text-foreground-title">
-        <span className="text-sm lg:text-md text-foreground-text/50 font-code">const </span>
+        <span className="text-sm lg:text-md text-foreground-text/50 font-code">
+          const{" "}
+        </span>
         my<span className="text-primary">Projects</span>
-        <span className="text-sm lg:text-md text-foreground-text/50 font-code"> = [...</span>
-        <span className="text-primary text-sm lg:text-md font-code animate-pulse">6</span>
-        <span className="text-sm lg:text-md text-foreground-text/50 font-code">]</span>
+        <span className="text-sm lg:text-md text-foreground-text/50 font-code">
+          {" "}
+          = [...
+        </span>
+        <span className="text-primary text-sm lg:text-md font-code animate-pulse">
+          6
+        </span>
+        <span className="text-sm lg:text-md text-foreground-text/50 font-code">
+          ]
+        </span>
       </h4>
     </ScrollWrapper>
   );

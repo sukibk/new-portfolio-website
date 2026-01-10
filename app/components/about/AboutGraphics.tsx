@@ -61,7 +61,7 @@ const AboutGraphics = ({ children }: AboutGraphicsProps) => {
           </div>
           <p className="text-foreground-text/60 dark:text-foreground-text/50 text-xs md:text-sm font-code">
             <span className="text-primary/70">{`// `}</span>
-            Drag and drop categories after "=" to filter
+            Drag and drop categories after &quot;=&quot; to filter
           </p>
         </ScrollWrapper>
         <TechSwitch

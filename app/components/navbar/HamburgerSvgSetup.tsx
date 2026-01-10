@@ -38,8 +38,10 @@ const HamburgerSvgSetup = ({
     >
       {/* Code-like label */}
       {!hamburgerOpened && (
-        <span className="absolute -right-16 top-1/2 -translate-y-1/2 text-xs font-code
-          text-foreground-text/40 hidden md:block transition-opacity duration-300">
+        <span
+          className="absolute -right-16 top-1/2 -translate-y-1/2 text-xs font-code
+          text-foreground-text/40 hidden md:block transition-opacity duration-300"
+        >
           .menu()
         </span>
       )}

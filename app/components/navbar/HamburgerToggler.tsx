@@ -19,10 +19,8 @@ export const HamburgerToggler = ({
     left: hamburgerOpened || isScrolled ? 0 : "1.25rem",
     top: hamburgerOpened || isScrolled ? 0 : "1.25rem",
     height: hamburgerOpened ? "100%" : isScrolled ? "4rem" : "2.5rem",
-    borderBottomLeftRadius:
-      hamburgerOpened || isScrolled ? "1rem" : "0.75rem",
-    borderBottomRightRadius:
-      hamburgerOpened || isScrolled ? "1rem" : "0.75rem",
+    borderBottomLeftRadius: hamburgerOpened || isScrolled ? "1rem" : "0.75rem",
+    borderBottomRightRadius: hamburgerOpened || isScrolled ? "1rem" : "0.75rem",
     borderTopLeftRadius: hamburgerOpened || isScrolled ? "0rem" : "0.75rem",
     borderTopRightRadius: hamburgerOpened || isScrolled ? "0rem" : "0.75rem",
   };

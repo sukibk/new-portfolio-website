@@ -5,8 +5,7 @@ import { useState } from "react";
 
 import Button from "../layout/Button";
 
-interface DownloadResumeButtonProps
-  extends React.HTMLAttributes<HTMLDivElement> {
+interface DownloadResumeButtonProps extends React.HTMLAttributes<HTMLDivElement> {
   variant?: "displayLarge" | "displaySmall" | "alwaysDisplay";
   className?: string;
 }
