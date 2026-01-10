@@ -160,3 +160,9 @@ body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* Scroll animation initial state - prevents flash before JS loads */
+.scroll-animate-init {
+  opacity: 0;
+  transform: translateY(15px);
+}

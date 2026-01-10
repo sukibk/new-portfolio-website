@@ -1,40 +1,29 @@
-import { type HTMLMotionProps, motion } from "framer-motion";
-import React from "react";
+import { motion, useInView } from "framer-motion";
+import React, { useRef } from "react";
 
-import { subtleScroll } from "@/app/utils/framer-motion/variants";
-
-interface ScrollWrapperProps extends HTMLMotionProps<"div"> {
+interface ScrollWrapperProps {
   children: React.ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
 }
 
 /**
  * ScrollWrapper Component
  * ------------------------
  * A reusable motion-enabled wrapper that animates its children when they scroll into view.
- *
- * Features:
- * - Uses Framer Motion for scroll-based reveal animation.
- * - Applies a fade-in + upward motion (`subtleScroll` variant).
- * - Triggers animation only once per page load (via `viewport.once`).
- * - Accepts all standard motion.div props, including `className`, `style`, `ref`, etc.
- *
- * Note:
- * - Extend with custom animation variants by overriding `variants`, `initial`, or `whileInView` if needed.
- *
- * @example
- * <ScrollWrapper className="my-10">
- *   <YourContent />
- * </ScrollWrapper>
  */
-// TODO: Add support for custom variants
-const ScrollWrapper = ({ children, ...props }: ScrollWrapperProps) => {
+const ScrollWrapper = ({ children, style, className }: ScrollWrapperProps) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
   return (
     <motion.div
-      {...props}
-      variants={subtleScroll}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      ref={ref}
+      className={className}
+      style={style}
+      initial={{ opacity: 0, y: 15 }}
+      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 15 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
     >
       {children}
     </motion.div>
