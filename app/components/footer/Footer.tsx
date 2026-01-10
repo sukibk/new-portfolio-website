@@ -6,12 +6,12 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const navLinks = [
-    { href: "#home", label: "Home" },
-    { href: "#about", label: "About" },
-    { href: "#timeline", label: "Timeline" },
-    { href: "#projects", label: "Projects" },
-    { href: "#testimonials", label: "Testimonials" },
-    { href: "#contact", label: "Contact" },
+    { href: "#home", label: "home" },
+    { href: "#about", label: "about" },
+    { href: "#timeline", label: "timeline" },
+    { href: "#projects", label: "projects" },
+    { href: "#testimonials", label: "testimonials" },
+    { href: "#contact", label: "contact" },
   ];
 
   return (
@@ -45,7 +45,7 @@ const Footer = () => {
                   href={link.href}
                   className="text-foreground-text/70 hover:text-primary transition-colors duration-300 font-code text-sm"
                 >
-                  .{link.label.toLowerCase()}()
+                  .{link.label}()
                 </a>
               ))}
             </nav>

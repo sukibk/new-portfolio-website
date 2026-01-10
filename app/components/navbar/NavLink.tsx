@@ -1,37 +1,44 @@
-import Link, { LinkProps } from "next/link";
-import { AnchorHTMLAttributes, useEffect, useState } from "react";
+import Link from "next/link";
+import { forwardRef, useEffect, useState } from "react";
 
-type NavLinkProps = LinkProps &
-  AnchorHTMLAttributes<HTMLAnchorElement> & {
-    href: string;
-  };
+interface NavLinkProps {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+}
 
-const NavLink = ({ href, children, className, ...rest }: NavLinkProps) => {
-  const [activeHash, setActiveHash] = useState<string>("");
+const NavLink = forwardRef<HTMLAnchorElement, NavLinkProps>(
+  ({ href, children, className, onClick, ...rest }, ref) => {
+    const [activeHash, setActiveHash] = useState<string>("");
 
-  const isActive = activeHash === href;
+    const isActive = activeHash === href;
 
-  useEffect(() => {
-    const updateHash = () => setActiveHash(window.location.hash || "#home");
+    useEffect(() => {
+      const updateHash = () => setActiveHash(window.location.hash || "#home");
 
-    updateHash(); // run on mount
-    window.addEventListener("hashchange", updateHash);
-    return () => window.removeEventListener("hashchange", updateHash);
-  }, []);
+      updateHash();
+      window.addEventListener("hashchange", updateHash);
+      return () => window.removeEventListener("hashchange", updateHash);
+    }, []);
 
-  return (
-    <Link href={href} passHref legacyBehavior>
-      <a
+    return (
+      <Link
+        ref={ref}
+        href={href}
+        onClick={onClick}
+        className={`${className || ""} text-3xl text-foreground-title font-code
+          hover:text-primary md:hover:scale-110
+          md:transition-all md:duration-300
+          ${isActive ? "text-primary italic text-4xl" : ""}`}
         {...rest}
-        className={`${className} text-3xl text-foreground-title 
-        hover:text-primary md:hover:scale-110 
-        md:transition-all md:duration-300
-        ${isActive ? "text-primary italic text-4xl" : ""}`}
       >
         {children}
-      </a>
-    </Link>
-  );
-};
+      </Link>
+    );
+  }
+);
+
+NavLink.displayName = "NavLink";
 
 export default NavLink;
