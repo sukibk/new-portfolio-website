@@ -34,27 +34,22 @@ const HeroImage = () => {
           alt="Marko Sudar"
           width={350}
           height={350}
-          className="mx-auto md:mx-0 rounded-md relative z-10 lg:w-[450px] lg:h-[400px] xl:w-[550px] xl:h-[500px] cursor-pointer shadow-[-15px_15px_30px_rgba(0,0,0,0.4)] dark:shadow-[-15px_15px_20px_rgba(0,0,0,0.4)]"
+          className="mx-auto md:mx-0 rounded-xl relative z-10 lg:w-[450px] lg:h-[400px] xl:w-[550px] xl:h-[500px] cursor-pointer
+            shadow-[-20px_20px_40px_rgba(0,0,0,0.3)] dark:shadow-[-20px_20px_35px_rgba(0,0,0,0.5)]
+            ring-1 ring-foreground-title/10 dark:ring-white/10"
         />
 
-        <motion.p
-          variants={hi_childrenVariants}
-          className="absolute bg-primary font-bold top-0 left-[1.56rem] md:left-0
-    text-white p-1 rounded-br-md rounded-tl-md
-    text-xs font-code z-20
-    flex items-center justify-center
-    transition-colors duration-500"
+        <p
+          className="absolute bg-gradient-to-r from-primary to-primary/80 font-bold top-0 left-[1.56rem] md:left-0
+            text-white p-1.5 px-2.5 rounded-br-lg rounded-tl-xl
+            text-xs font-code z-20
+            flex items-center justify-center gap-1.5
+            shadow-lg shadow-primary/30
+            backdrop-blur-sm"
         >
+          <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
           US Permanent Resident
-        </motion.p>
-        <motion.p
-          variants={hi_childrenVariants}
-          className=" absolute
-           text-foreground-text right-0 rounded-md font-semibold
-          text-xs font-code inline-block z-20 right-[1.56rem] md:right-0"
-        >
-          just-a-chill-guy.jpg
-        </motion.p>
+        </p>
         <HeroCallToAction className="md:hidden" />
       </motion.div>
     </div>

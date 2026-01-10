@@ -58,14 +58,15 @@ const HeroText = () => {
         className="text-base md:text-lg xl:text-3xl text-foreground-text leading-10
            transition-colors duration-500"
       >
-        I’m a{" "}
+        I'm a{" "}
         <span
-          className={
-            "align-middle inline-flex items-center bg-gray-800/50 italic text-[#f8f8ff] dark:text-gray-300 font-bold  p-2 mx-1  font-code rounded-md transition-colors duration-500" +
-            "font-code text-sm  xl:text-lg mt"
-          }
+          className="align-middle inline-flex items-center bg-gradient-to-r from-gray-800/80 to-gray-900/80
+            dark:from-gray-700/60 dark:to-gray-800/60 italic text-[#f8f8ff] dark:text-gray-200
+            font-bold p-2 px-3 mx-1 font-code rounded-lg transition-all duration-500
+            text-sm xl:text-lg shadow-lg shadow-black/20 dark:shadow-black/40
+            border border-gray-700/30 dark:border-gray-500/20 backdrop-blur-sm
+            hover:scale-105 hover:shadow-primary/20 cursor-default"
         >
-          {" "}
           &lt;p&gt;Sof4war3 Eng1n33r&lt;/p&gt;
         </span>{" "}
         working and living in the United States

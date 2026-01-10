@@ -11,10 +11,10 @@ const TimelinePage = () => {
   return (
     <section
       id="timeline"
-      className="relative min-h-screen  w-full flex  flex-col
+      className="relative min-h-screen w-full flex flex-col
        items-center justify-center py-[6rem] md:py-[10rem]
        md:flex-row dark:text-cover px-8 md:gap-8
-       transition-colors duration-500  flex-1 font-lilita-one border border-red-500
+       transition-colors duration-500 flex-1 font-lilita-one
        overflow-hidden lg:overflow-visible
       "
     >

@@ -36,16 +36,22 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       <button
         ref={ref}
         className={cn(
-          "p-3 rounded-md hover:scale-110 font-bold cursor-pointer relative overflow-hidden transition-all duration-500",
+          "p-3 px-5 rounded-xl hover:scale-105 font-bold cursor-pointer relative overflow-hidden",
+          "transition-all duration-300 ease-out",
+          "shadow-md hover:shadow-lg active:scale-100",
           variant === "primary" &&
             "bg-button-primary-bg hover:bg-button-primary-bg-hover " +
-              "text-button-primary-fg hover:text-button-primary-fg-hover ",
+              "text-button-primary-fg hover:text-button-primary-fg-hover " +
+              "shadow-primary/20 hover:shadow-primary/30",
           variant === "secondary" &&
             "bg-button-secondary-bg text-button-secondary-fg " +
-              "hover:text-button-secondary-fg-hover hover:bg-button-secondary-bg-hover ",
+              "hover:text-button-secondary-fg-hover hover:bg-button-secondary-bg-hover " +
+              "shadow-black/10 dark:shadow-black/30",
           variant === "skeleton" &&
-            "border border-button-skeleton-fg bg-button-skeleton-bg text-button-skeleton-fg " +
-              "hover:bg-button-skeleton-bg-hover hover:text-button-skeleton-fg-hover"
+            "border-2 border-button-skeleton-fg/30 bg-button-skeleton-bg text-button-skeleton-fg " +
+              "hover:bg-button-skeleton-bg-hover hover:text-button-skeleton-fg-hover " +
+              "hover:border-transparent shadow-none hover:shadow-lg",
+          className
         )}
         disabled={loading || props.disabled}
         {...props}

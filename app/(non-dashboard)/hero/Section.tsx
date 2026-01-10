@@ -9,10 +9,10 @@ const HeroPage = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex  flex-col
+      className="relative min-h-screen flex flex-col
        items-center justify-center py-[5rem]
        md:flex-row dark:text-cover px-5 md:gap-8
-       transition-colors duration-500 w-full flex-1 font-lilita-one border border-red-500
+       transition-colors duration-500 w-full flex-1 font-lilita-one
       "
     >
       <HeroText />

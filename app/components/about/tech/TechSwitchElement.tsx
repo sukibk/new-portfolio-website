@@ -75,9 +75,9 @@ const TechSwitchElement = ({
       {...attributes}
       style={style}
       className={cn(
-        "relative text-foreground-title rounded-md p-3 shadow-md cursor-grab transition-colors duration-500 touch-none",
+        "relative text-foreground-title rounded-md p-3 shadow-md cursor-grab touch-none",
         variant === "active" && "w-[100px] text-center xl:text-xl",
-        variant === "non-active" && "hover:bg-primary !hover:text-white"
+        variant === "non-active" && "border-2 border-dashed border-foreground-title/30 dark:border-white/30 hover:bg-primary hover:text-white hover:border-primary"
       )}
       onClick={() => setActiveIndex(id)}
     >
@@ -89,13 +89,13 @@ const TechSwitchElement = ({
       {/* Animate only the contents INSIDE */}
       {isFirst && !draggedFirst ? (
         <motion.div key={shakeCount} animate="shake" variants={shakeVariants}>
-          <motion.p className="transition-all hover:!text-white duration-500 text-md">
+          <motion.p className="transition-all duration-500 text-md">
             {value}
           </motion.p>
         </motion.div>
       ) : (
         <motion.div>
-          <motion.p className="transition-all hover:!text-white duration-500 text-md">
+          <motion.p className="transition-all duration-500 text-md">
             {value}
           </motion.p>
         </motion.div>

@@ -36,8 +36,8 @@ const TestimonialsPage = () => {
   return (
     <section
       id="testimonials"
-      className="relative  min-h-[40rem] h-[60vh] md:min-h-[50rem] md:h-[80vh] flex  flex-col justify-center gap-20
-       items-center px-5 transition-colors duration-500 w-full flex-1 font-lilita-one border border-green-400
+      className="relative min-h-[40rem] h-[60vh] md:min-h-[50rem] md:h-[80vh] flex flex-col justify-center gap-20
+       items-center px-5 transition-colors duration-500 w-full flex-1 font-lilita-one
       "
     >
       <TestimonialsTitle />

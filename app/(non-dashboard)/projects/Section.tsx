@@ -7,20 +7,20 @@ const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="relative min-h-screen py-[6rem] md:py-[10rem] flex flex-col
+      className="relative py-[4rem] md:py-[6rem] flex flex-col
         items-center px-5 transition-colors duration-500 w-full
         flex-1 font-lilita-one"
     >
       <ProjectsTitle />
 
       {/* Code-like description text */}
-      <div className="font-code text-foreground-text text-xs md:text-sm mb-8 -mt-8">
-        <p className="text-center">
-          <span className="text-primary">{`// `}</span>
+      <div className="font-code text-foreground-text/60 dark:text-foreground-text/50 text-xs md:text-sm mb-8 -mt-8 space-y-1">
+        <p className="text-center transition-colors duration-300 hover:text-foreground-text/80">
+          <span className="text-primary/70">{`// `}</span>
           Featured projects and contributions
         </p>
-        <p className="text-center">
-          <span className="text-primary">{`// `}</span>
+        <p className="text-center transition-colors duration-300 hover:text-foreground-text/80">
+          <span className="text-primary/70">{`// `}</span>
           Built with modern technologies and best practices
         </p>
       </div>

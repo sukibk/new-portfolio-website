@@ -27,18 +27,39 @@ const ScrollButtons = ({
   isScrolling,
 }: ScrollButtonsProps) => {
   return (
-    <div className="flex gap-4 z-100 text-white ">
+    <div className="flex items-center gap-6 z-100">
       <button
         onClick={scrollLeft}
         disabled={currentIndex === 0 || isScrolling}
-        className="p-2 rounded-full bg-primary hover:bg-primary/80 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-colors duration-300"
+        className="p-3 rounded-xl bg-gradient-to-br from-primary to-primary/80 text-white
+          hover:scale-110 hover:shadow-lg hover:shadow-primary/40
+          disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none
+          cursor-pointer transition-all duration-300 active:scale-95"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
+
+      {/* Progress indicator */}
+      <div className="flex gap-2">
+        {Array.from({ length: listSize }).map((_, i) => (
+          <div
+            key={i}
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === currentIndex
+                ? "w-6 bg-primary"
+                : "w-2 bg-foreground-text/20 dark:bg-white/20"
+            }`}
+          />
+        ))}
+      </div>
+
       <button
         onClick={scrollRight}
         disabled={currentIndex === listSize - 1 || isScrolling}
-        className="p-2 rounded-full bg-primary hover:bg-primary/80 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer transition-colors duration-300"
+        className="p-3 rounded-xl bg-gradient-to-br from-primary to-primary/80 text-white
+          hover:scale-110 hover:shadow-lg hover:shadow-primary/40
+          disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none
+          cursor-pointer transition-all duration-300 active:scale-95"
       >
         <ChevronRight className="w-6 h-6" />
       </button>

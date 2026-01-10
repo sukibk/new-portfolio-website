@@ -8,7 +8,10 @@ interface ArticleCardProps extends React.HTMLAttributes<HTMLElement> {
 const ArticleCard = ({ children, className, ...props }: ArticleCardProps) => {
   return (
     <article
-      className={`rounded-xl bg-background backdrop-blur-md shadow-xl transition-colors duration-500 ${className || ""}`}
+      className={`rounded-2xl bg-background/80 dark:bg-background/60 backdrop-blur-md
+        shadow-xl shadow-black/5 dark:shadow-black/20
+        transition-all duration-500
+        ring-1 ring-foreground-title/5 dark:ring-white/5 ${className || ""}`}
       {...props}
     >
       {children}

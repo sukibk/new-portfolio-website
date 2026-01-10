@@ -58,58 +58,58 @@ const TimelineCard = ({
         <div
           className={clsx(
             "w-[2rem] h-[2rem] rounded-full bg-primary z-30",
+            "shadow-lg shadow-primary/40 ring-4 ring-background",
             variant === "right" && "-ml-[0.9rem]",
             variant === "left" && "ml-0 -mr-[0.9rem]"
           )}
         ></div>
         {/* Line */}
-        <div className="w-[3rem] h-[3px] bg-primary "></div>
+        <div className="w-[3rem] h-[3px] bg-gradient-to-r from-primary to-primary/50"></div>
       </div>
       <ArticleCard
         className={clsx(
-          ` ml-[3rem] rounded-md  flex flex-col  gap-1 overflow-hidden -mt-[20px] flex-1 px-3 !py-5 text-foreground-text transition-colors duration-500 font-bold`,
+          "ml-[3rem] rounded-xl flex flex-col gap-1 overflow-hidden -mt-[20px] flex-1 px-4 !py-4",
+          "text-foreground-text transition-all duration-500 font-bold",
+          "hover:shadow-xl hover:shadow-primary/10",
           variant === "right" && "ml-0 mr-[3rem] border-r-2 border-r-primary",
           variant === "left" && "ml-[3rem] mr-0 border-l-2 border-l-primary"
         )}
         style={{ height: `${cardHeight}rem`, width: `${cardWidth}rem` }}
       >
-        <Image
-          src={logo}
-          alt="icon"
-          width={40}
-          height={40}
-          className={`self-end transition-all duration-500 ${invertLogo ? "invert dark:invert-0" : ""}`}
-        />
-        <div>
-          <h3
-            className="text-2xl text-foreground-title flex-1 transition-colors duration-500
-      "
-          >
+        {/* Header row with logo and title */}
+        <div className="flex items-center gap-3">
+          <Image
+            src={logo}
+            alt="icon"
+            width={36}
+            height={36}
+            className={`transition-all duration-500 opacity-80 hover:opacity-100 ${invertLogo ? "invert dark:invert-0" : ""}`}
+          />
+          <h3 className="text-xl md:text-2xl text-foreground-title flex-1 transition-colors duration-500">
             {title}
           </h3>
         </div>
         <div>
-          <h4
-            className="text-xl flex-1
-      "
-          >
+          <h4 className="text-lg md:text-xl text-foreground-text/80">
             {company}
           </h4>
         </div>
         <div>
-          <p
-            className="text-md flex-1
-      "
-          >
+          <p className="text-sm md:text-md text-foreground-text/60 font-code">
+            <span className="text-primary/60">{`// `}</span>
             {date}
           </p>
         </div>
-        <div>
-          <p
-            className="text-sm flex-1
-      "
-          >
-            Technologies: {technologies.join(", ")}
+        <div className="overflow-hidden flex-1">
+          <p className="text-[0.6rem] md:text-xs text-foreground-text/70 font-code leading-relaxed">
+            <span className="text-primary/50">[</span>
+            {technologies.map((tech, i) => (
+              <span key={tech}>
+                <span className="text-primary/80">{tech}</span>
+                {i < technologies.length - 1 && <span className="text-foreground-text/40">, </span>}
+              </span>
+            ))}
+            <span className="text-primary/50">]</span>
           </p>
         </div>
       </ArticleCard>

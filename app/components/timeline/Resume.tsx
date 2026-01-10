@@ -27,29 +27,10 @@ const Resume = () => {
       <section className="mb-2">
         <h2 className="font-bold underline">Experience</h2>
 
-        <p className="font-semibold">
-          Vectai AI <span className="float-right">Remote</span>
-        </p>
-        <p className="italic">Full stack Developer <span className="float-right">May 2025 - present</span></p>
-        <ul className="list-disc ml-4">
-          <li>
-            Architected and deployed a recommendation engine that increased user retention by 35% and processed 50,000+ daily interactions with 99.9% uptime
-          </li>
-          <li>
-            Built full-stack features using FastAPI/Python and Next.js/React, delivering RAG-powered friend suggestions that increased in-app user interactions by 50% and integrated payment processing serving 100,000 transactions.
-          </li>
-          <li>
-            Drove adoption of machine learning power user feedback features, prioritized features based on DAU/MAU analysis.
-          </li>
-          <li>
-            Delivered performance optimizations to front end that reduced page load times by 35% and achieved 99.9% uptime, delivering cycles and improved product-market fit by 35% based on DAU/MAU analysis.
-          </li>
-        </ul>
-
         <p className="font-semibold mt-1">
-          Associate Degree International <span className="float-right">Remote</span>
+          AUVSI <span className="float-right">Washington, D.C, USA / Hybrid</span>
         </p>
-        <p className="italic">Software Engineer <span className="float-right">January 2024 - May 2025</span></p>
+        <p className="italic">Software Engineer <span className="float-right">January 2024 - present</span></p>
         <ul className="list-disc ml-4">
           <li>
             Spearheaded the development of USRD (Uncrewed Systems and Robotics Database) Katana, a fully scalable AI-powered data warehouse built with Next.js, Node.js, TypeScript, Prisma ORM, and AWS services (Cognito, RDS, S3), reducing manual data processing from 4 hours to 30 minutes daily and boosting team productivity by 300%.
@@ -65,6 +46,25 @@ const Resume = () => {
           </li>
           <li>
             Supported infrastructure team for 2 years, including moderating a panel discussion on the role of Generative AI in autonomous systems and operations
+          </li>
+        </ul>
+
+        <p className="font-semibold">
+          Vectai AI <span className="float-right">Remote</span>
+        </p>
+        <p className="italic">Full stack Developer <span className="float-right">May 2025 - Dec 2025</span></p>
+        <ul className="list-disc ml-4">
+          <li>
+            Architected and deployed a recommendation engine that increased user retention by 35% and processed 50,000+ daily interactions with 99.9% uptime
+          </li>
+          <li>
+            Built full-stack features using FastAPI/Python and Next.js/React, delivering RAG-powered friend suggestions that increased in-app user interactions by 50% and integrated payment processing serving 100,000 transactions.
+          </li>
+          <li>
+            Drove adoption of machine learning power user feedback features, prioritized features based on DAU/MAU analysis.
+          </li>
+          <li>
+            Delivered performance optimizations to front end that reduced page load times by 35% and achieved 99.9% uptime, delivering cycles and improved product-market fit by 35% based on DAU/MAU analysis.
           </li>
         </ul>
 

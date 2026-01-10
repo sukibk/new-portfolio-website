@@ -46,30 +46,36 @@ const TestimonialCard = ({ name, text, company }: TestimonialCardProps) => {
       variants={cardVariants}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
-      className=""
+      className="group"
     >
-      <ArticleCard className="border-l-2 border-l-primary h-[18rem] w-[20rem] md:h-[21rem] md:w-[30rem] flex flex-1 flex-col font-code px-2 py-0">
-        <div className="flex flex-col gap-2 md:gap-2 justify-center h-full w-full">
-          <p className="absolute top-3 left-3 text-foreground-text">{"{"}</p>
+      <ArticleCard className="border-l-3 border-l-primary h-[18rem] w-[20rem] md:h-[21rem] md:w-[30rem]
+        flex flex-1 flex-col font-code px-4 py-0
+        hover:shadow-xl hover:shadow-primary/10 transition-all duration-300
+        relative overflow-hidden">
+        {/* Subtle gradient on hover */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+        <div className="flex flex-col gap-2 md:gap-2 justify-center h-full w-full relative z-10">
+          <p className="absolute top-3 left-3 text-foreground-text/50 text-lg">{"{"}</p>
           <h3 className="pl-6 font-bold text-foreground-title text-md md:text-3xl">
-            <span className="text-foreground-text text-xs md:text-sm">
+            <span className="text-foreground-text/60 text-xs md:text-sm">
               name:{" "}
             </span>
             {name}
           </h3>
-          <h4 className="pl-6 text-foreground-text text-sm md:text-lg">
-            <span className="text-foreground-text text-xs md:text-sm font-bold">
+          <h4 className="pl-6 text-foreground-text/80 text-sm md:text-lg leading-relaxed">
+            <span className="text-foreground-text/60 text-xs md:text-sm font-bold">
               text:{" "}
             </span>
-            {text}
+            &quot;{text}&quot;
           </h4>
-          <p className="pl-6 text-xs md:text-lg text-primary">
-            <span className="text-foreground-text text-xs md:text-sm font-bold">
+          <p className="pl-6 text-xs md:text-lg text-primary font-semibold">
+            <span className="text-foreground-text/60 text-xs md:text-sm font-bold">
               company:{" "}
             </span>
             {company}
           </p>
-          <p className="absolute bottom-3 left-3 text-foreground-text">{"}"}</p>
+          <p className="absolute bottom-3 left-3 text-foreground-text/50 text-lg">{"}"}</p>
         </div>
       </ArticleCard>
     </motion.div>

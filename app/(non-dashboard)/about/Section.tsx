@@ -12,7 +12,7 @@ const AboutPage = () => {
     <section
       id="about"
       className="relative min-h-screen flex flex-col
-       items-center justify-center pt-[5rem] md:pt-[2rem] lg:pt-0  border border-blue-500
+       items-center justify-center pt-[5rem] md:pt-[2rem] lg:pt-0
        lg:flex-row dark:text-cover px-5 md:gap-8
        transition-colors duration-500 w-full flex-1 font-lilita-one overflow-hidden
        "

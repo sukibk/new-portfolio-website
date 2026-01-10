@@ -28,7 +28,7 @@ export default function CurrentTechStackDrop({
         value={droppedTech.value}
         activeIndex={-1}
         setActiveIndex={() => {}}
-        indexDropped={-1} // or ignore this here entirely if you don’t need it
+        indexDropped={-1}
       />
     </div>
   );

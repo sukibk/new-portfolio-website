@@ -38,25 +38,31 @@ const AboutGraphics = ({ children }: AboutGraphicsProps) => {
   return (
     <div className="flex-1 flex flex-col h-full pt-20 md:pt-0 gap-8">
       <DndContext onDragEnd={handleDragEnd}>
-        <ScrollWrapper className="flex justify-center items-center">
-          <div>
-            <AngledText side="left" className="!-mt-[10px] absolute">
-              let
-            </AngledText>
-            <motion.h3
-              className="text-foreground-title text-3xl gap-1 md:text-4xl xl:text-5xl font-bold transition-all duration-500"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              myTec
-              <span className="text-primary mr-3 transition-all duration-500">
-                hStack =
-              </span>
-            </motion.h3>
-          </div>
+        <ScrollWrapper className="flex flex-col items-center gap-2">
+          <div className="flex justify-center items-center">
+            <div>
+              <AngledText side="left" className="!-mt-[10px] absolute">
+                let
+              </AngledText>
+              <motion.h3
+                className="text-foreground-title text-3xl gap-1 md:text-4xl xl:text-5xl font-bold transition-all duration-500"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                myTec
+                <span className="text-primary mr-3 transition-all duration-500">
+                  hStack =
+                </span>
+              </motion.h3>
+            </div>
 
-          <CurrentTechStackDrop droppedTech={droppedTech} />
+            <CurrentTechStackDrop droppedTech={droppedTech} />
+          </div>
+          <p className="text-foreground-text/60 dark:text-foreground-text/50 text-xs md:text-sm font-code">
+            <span className="text-primary/70">{`// `}</span>
+            Drag and drop categories after "=" to filter
+          </p>
         </ScrollWrapper>
         <TechSwitch
           activeIndex={myTechStackIndex}
