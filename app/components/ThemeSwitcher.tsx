@@ -18,12 +18,12 @@ const ThemeSwitcher = () => {
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      className={`text-white fixed 
-        text-foreground-h p-2.5 rounded-md cursor-pointer ease-in top-5 z-50
-        right-5 transition-all duration-300 hover:bg-background-hover 
+      className={`text-white fixed
+        text-foreground-h p-2.5 rounded-md cursor-pointer ease-in z-50
+        right-5 transition-all duration-300 hover:bg-background-hover
         nav:right-[calc(50%-800px)] overflow-hidden
         hover:text-foreground-hover-title w-10 h-10
-        ${isScrolled || hamburgerOpened ? "nav:mr-6 bg-transparent" : "bg-primary"}
+        ${isScrolled || hamburgerOpened ? "top-3 nav:mr-6 bg-primary/80 md:bg-transparent" : "top-5 bg-primary"}
         `}
       onClick={() => dispatch({ type: "TOGGLE_THEME" })}
     >
