@@ -59,8 +59,8 @@ const TestimonialsPage = () => {
         src="/images/testimonial-section/ai.png"
         alt="ai.png"
         aria-hidden="true"
-        className="absolute w-[450px] h-[450px] opacity-7 left-[-180px] bottom-[-200px]  dark:opacity-5
-              pointer-events-none select-none  2xl:left-0 2xl:bottom-[-200px] -z-10"
+        className="absolute w-[450px] h-[450px] opacity-7 hidden lg:block left-0 bottom-0 dark:opacity-5
+              pointer-events-none select-none 2xl:left-0 2xl:bottom-0 -z-10"
       />
     </section>
   );

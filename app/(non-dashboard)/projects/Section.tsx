@@ -34,7 +34,7 @@ const ProjectsSection = () => {
         src="/images/hero-section/mainIconsLight.png"
         alt="decoration"
         aria-hidden="true"
-        className="absolute w-[450px] h-[450px] opacity-10 right-[-150px] top-[-80px] -z-10
+        className="absolute w-[450px] h-[450px] opacity-10 hidden lg:block right-0 top-0 -z-10
           pointer-events-none select-none dark:opacity-5 2xl:right-0 2xl:top-0"
       />
     </section>

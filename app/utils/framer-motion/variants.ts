@@ -4,17 +4,16 @@
 
 // Project-wide
 const subtleScroll = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 15 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.4, ease: "easeOut" as const },
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
   },
   exit: {
     opacity: 0,
-    y: -20,
-
-    transition: { duration: 0.25, ease: "easeIn" as const },
+    y: -10,
+    transition: { duration: 0.2, ease: [0.25, 0.1, 0.25, 1] },
   },
 };
 

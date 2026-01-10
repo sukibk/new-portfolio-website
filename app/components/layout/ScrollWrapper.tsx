@@ -34,7 +34,7 @@ const ScrollWrapper = ({ children, ...props }: ScrollWrapperProps) => {
       variants={subtleScroll}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.15 }}
     >
       {children}
     </motion.div>

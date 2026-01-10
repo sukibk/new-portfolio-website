@@ -21,7 +21,7 @@ const HeroPage = () => {
         src="/images/hero-section/mainIconsLight.png"
         alt="mainIconsLight.png"
         aria-hidden="true"
-        className="absolute w-[450px] h-[450px] opacity-10  left-[-150px] bottom-[-80px]
+        className="absolute w-[450px] h-[450px] opacity-10 hidden lg:block left-0 bottom-0 -z-10
               pointer-events-none select-none fill-[#222] 2xl:left-0 2xl:bottom-0"
       />
     </section>
