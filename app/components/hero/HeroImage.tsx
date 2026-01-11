@@ -39,7 +39,8 @@ const HeroImage = () => {
             ring-1 ring-foreground-title/10 dark:ring-white/10"
         />
 
-        <p
+        <motion.p
+          variants={hi_childrenVariants}
           className="absolute bg-gradient-to-r from-primary to-primary/80 font-bold top-0 left-[1.56rem] md:left-0
             text-white p-1.5 px-2.5 rounded-br-lg rounded-tl-xl
             text-xs font-code z-20
@@ -48,9 +49,11 @@ const HeroImage = () => {
             backdrop-blur-sm"
         >
           <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-          US Permanent Resident
-        </p>
-        <HeroCallToAction className="md:hidden" />
+          Open for Collaboration
+        </motion.p>
+        <motion.div variants={hi_childrenVariants} className="md:hidden">
+          <HeroCallToAction />
+        </motion.div>
       </motion.div>
     </div>
   );

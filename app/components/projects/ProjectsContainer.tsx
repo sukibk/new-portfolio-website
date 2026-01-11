@@ -8,7 +8,7 @@ import ProjectCard from "./ProjectCard";
 import ProjectModal from "./ProjectModal";
 
 const ProjectsContainer = () => {
-  const [filter, setFilter] = useState<"all" | "featured">("featured");
+  const [filter, setFilter] = useState<"all" | "featured">("all");
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
