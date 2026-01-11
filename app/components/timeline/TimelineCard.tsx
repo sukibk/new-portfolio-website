@@ -40,7 +40,7 @@ const TimelineCard = ({
   return (
     <ScrollWrapper
       className={clsx(
-        "relative", // TODO: Fix for small widths should go here
+        "relative mr-4 resume:mr-0",
         variant === "left" && "ml-[3rem]",
         className
       )}
@@ -100,7 +100,7 @@ const TimelineCard = ({
           </p>
         </div>
         <div className="overflow-hidden flex-1">
-          <p className="text-[0.6rem] md:text-xs text-foreground-text/70 font-code leading-relaxed">
+          <p className="text-xs md:text-sm text-foreground-text/70 font-code leading-relaxed">
             <span className="text-primary/50">[</span>
             {technologies.map((tech, i) => (
               <span key={tech}>
