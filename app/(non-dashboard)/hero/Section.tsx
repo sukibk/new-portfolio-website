@@ -16,14 +16,13 @@ const HeroPage = () => {
        overflow-hidden
       "
     >
-      {/* Floating code decorations */}
+      {/* Floating brackets */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 1 }}
-        className="absolute inset-0 pointer-events-none overflow-hidden z-0"
+        className="absolute inset-0 pointer-events-none overflow-hidden"
       >
-        {/* Top left bracket */}
         <motion.span
           animate={{ y: [0, -10, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
@@ -31,8 +30,6 @@ const HeroPage = () => {
         >
           {"{"}
         </motion.span>
-
-        {/* Top right bracket */}
         <motion.span
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
@@ -40,45 +37,6 @@ const HeroPage = () => {
         >
           {"}"}
         </motion.span>
-
-        {/* Bottom code snippet */}
-        <motion.div
-          animate={{ x: [0, 5, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute bottom-[20%] left-[3%] text-foreground-text/10 font-code text-xs md:text-sm hidden lg:block"
-        >
-          <p>const developer = {"{"}</p>
-          <p className="ml-4">name: &quot;Marko&quot;,</p>
-          <p className="ml-4">passionate: true,</p>
-          <p>{"}"}</p>
-        </motion.div>
-
-        {/* Right side decoration */}
-        <motion.div
-          animate={{ x: [0, -5, 0] }}
-          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-[35%] right-[3%] text-foreground-text/10 font-code text-xs md:text-sm hidden lg:block text-right"
-        >
-          <p>{"// Building the future"}</p>
-          <p>{"// One line at a time"}</p>
-        </motion.div>
-
-        {/* Floating dots */}
-        <motion.div
-          animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
-          transition={{ duration: 3, repeat: Infinity }}
-          className="absolute top-[40%] left-[15%] w-2 h-2 rounded-full bg-primary/30 hidden md:block"
-        />
-        <motion.div
-          animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }}
-          transition={{ duration: 4, repeat: Infinity, delay: 1 }}
-          className="absolute top-[60%] right-[20%] w-3 h-3 rounded-full bg-primary/20 hidden md:block"
-        />
-        <motion.div
-          animate={{ scale: [1, 1.1, 1], opacity: [0.25, 0.45, 0.25] }}
-          transition={{ duration: 5, repeat: Infinity, delay: 2 }}
-          className="absolute bottom-[30%] right-[10%] w-2 h-2 rounded-full bg-primary/25 hidden md:block"
-        />
       </motion.div>
 
       <HeroText />
@@ -93,12 +51,40 @@ const HeroPage = () => {
               pointer-events-none select-none fill-[#222] 2xl:left-0 2xl:bottom-0"
       />
 
+      {/* Bottom code decoration */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="absolute bottom-20 left-0 right-0 flex justify-between px-6 md:px-12 pointer-events-none"
+      >
+        <motion.div
+          animate={{ x: [0, 5, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          className="text-foreground-text/15 font-code text-xs hidden md:block"
+        >
+          <p>const developer = {"{"}</p>
+          <p className="ml-4">name: &quot;Marko&quot;,</p>
+          <p className="ml-4">passionate: true,</p>
+          <p>{"}"}</p>
+        </motion.div>
+
+        <motion.div
+          animate={{ x: [0, -5, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
+          className="text-foreground-text/15 font-code text-xs hidden md:block text-right"
+        >
+          <p>{"// Building the future"}</p>
+          <p>{"// One line at a time"}</p>
+        </motion.div>
+      </motion.div>
+
       {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.5, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
       >
         <span className="text-foreground-text/40 text-xs font-code">scroll</span>
         <motion.div
