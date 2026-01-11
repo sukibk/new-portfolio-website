@@ -60,7 +60,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-theme="dark"
-      className="transition-colors duration-500 height-100 overflow-y-scroll overflow-x-hidden overscroll-none scrollbar-hide"
+      className="dark transition-colors duration-500 height-100 overflow-y-scroll overflow-x-hidden overscroll-none scrollbar-hide"
     >
       <body
         className={`${lilitaOne.variable} ${geistMono.variable}

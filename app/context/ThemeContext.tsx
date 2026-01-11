@@ -41,7 +41,7 @@ const themeReducer = (state: State, action: Action): State => {
 
 // Theme provider that wraps the app and provides theme context
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [state, dispatch] = useReducer(themeReducer, { theme: "light" });
+  const [state, dispatch] = useReducer(themeReducer, { theme: "dark" });
 
   useEffect(() => {
     /* Runs only at initial load. Either gets saved theme or sets theme to the
