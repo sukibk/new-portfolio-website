@@ -22,8 +22,8 @@ const Footer = () => {
     { href: "#about", label: "about" },
     { href: "#timeline", label: "timeline" },
     { href: "#projects", label: "projects" },
-    { href: "#testimonials", label: "testimonials" },
     { href: "#contact", label: "contact" },
+    { href: "/blog", label: "blog" },
   ];
 
   return (

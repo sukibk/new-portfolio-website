@@ -1,4 +1,6 @@
 // tailwind.config.js
+import typography from "@tailwindcss/typography";
+
 export default {
   darkMode: "class", // Must-have for dark mode to function properly
   content: [
@@ -18,5 +20,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [typography],
 };
