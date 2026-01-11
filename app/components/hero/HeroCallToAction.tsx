@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 import Button from "@/app/components/layout/Button";
 import DownloadResumeButton from "@/app/components/timeline/DownloadResumeButton";
@@ -9,7 +10,7 @@ interface HeroCallToActionProps {
 }
 
 /**
- * Call to action on Hero Section - TODO: Add real actions
+ * Call to action on Hero Section
  *
  * @example
  * <HeroCallToAction className="md:hidden" />
@@ -21,10 +22,17 @@ const HeroCallToAction = ({ className = "" }: HeroCallToActionProps) => {
   return (
     <motion.div
       variants={ht_childVariants}
-      className={`flex  w-[400px] justify-center gap-16 items-center mt-10 z-50 ${className}`}
+      className={`flex flex-col items-center gap-6 mt-10 z-50 ${className}`}
     >
-      <DownloadResumeButton variant="alwaysDisplay" />
-      <Button variant="secondary">CONTACT ME</Button>
+      <div className="flex justify-center gap-8 md:gap-16 items-center">
+        <DownloadResumeButton variant="alwaysDisplay" />
+        <Button variant="secondary">CONTACT ME</Button>
+      </div>
+      <Link href="/blog">
+        <span className="text-foreground-text/60 hover:text-primary font-code text-sm transition-colors duration-200 cursor-pointer">
+          {"{"} <span className="hover:underline">read my blog</span> {"}"}
+        </span>
+      </Link>
     </motion.div>
   );
 };

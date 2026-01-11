@@ -3,25 +3,25 @@ import { timelineTechnologies } from "./technologies";
 
 export const workExperiences: TimelineCardProps[] = [
   {
-    title: "Fullstack Developer",
-    company: "Vectal.ai",
-    date: "MAY 2025 - PRESENT",
-    technologies: timelineTechnologies.vectal,
-    logo: "/images/timeline-section/vectal-marko-sudar-fullstack-developer.png",
-    variant: "left",
-    className:
-      "resume:ml-0 resume:col-start-2 resume:col-span-1 resume:row-start-1 transition-all duration-500",
-    invertLogo: true,
-  },
-  {
     title: "Software Engineer",
     company: "AUVSI",
     date: "JAN 2024 - PRESENT",
     technologies: timelineTechnologies.auvsi,
     logo: "/images/timeline-section/auvsi-marko-sudar-aws-gcp-azure.png",
+    variant: "left",
+    className:
+      "resume:ml-0 resume:col-start-2 resume:col-span-1 resume:row-start-1 transition-all duration-500",
+  },
+  {
+    title: "Fullstack Developer",
+    company: "Vectal.ai",
+    date: "MAY 2025 - DEC 2025",
+    technologies: timelineTechnologies.vectal,
+    logo: "/images/timeline-section/vectal-marko-sudar-fullstack-developer.png",
     variant: "right",
     className:
       "resume:col-start-1 resume:col-span-1 resume:justify-self-end resume:row-start-2 resume:mr-[1.25rem] transition-all duration-500",
+    invertLogo: true,
   },
   {
     title: "Web Developer Intern",

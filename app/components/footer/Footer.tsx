@@ -1,6 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   FaEnvelope,
   FaGithub,
@@ -16,8 +18,10 @@ import ScrollWrapper from "@/app/components/layout/ScrollWrapper";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const pathname = usePathname();
+  const isBlogPage = pathname?.startsWith("/blog");
 
-  const navLinks = [
+  const homeNavLinks = [
     { href: "#home", label: "home" },
     { href: "#about", label: "about" },
     { href: "#timeline", label: "timeline" },
@@ -25,6 +29,13 @@ const Footer = () => {
     { href: "#contact", label: "contact" },
     { href: "/blog", label: "blog" },
   ];
+
+  const blogNavLinks = [
+    { href: "/", label: "home" },
+    { href: "/blog", label: "blog" },
+  ];
+
+  const navLinks = isBlogPage ? blogNavLinks : homeNavLinks;
 
   return (
     <footer className="relative w-full bg-background text-foreground-title transition-colors duration-500">
@@ -68,15 +79,29 @@ const Footer = () => {
                 <span className="text-primary">{`}`}</span>
               </h4>
               <nav className="grid grid-cols-2 gap-2">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="text-foreground-text/70 hover:text-primary transition-colors duration-300 font-code text-sm"
-                  >
-                    .{link.label}()
-                  </a>
-                ))}
+                {navLinks.map((link) => {
+                  const isPageLink = link.href.startsWith("/");
+                  if (isPageLink) {
+                    return (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="text-foreground-text/70 hover:text-primary transition-colors duration-300 font-code text-sm"
+                      >
+                        .{link.label}()
+                      </Link>
+                    );
+                  }
+                  return (
+                    <a
+                      key={link.href}
+                      href={link.href}
+                      className="text-foreground-text/70 hover:text-primary transition-colors duration-300 font-code text-sm"
+                    >
+                      .{link.label}()
+                    </a>
+                  );
+                })}
               </nav>
             </motion.div>
           </ScrollWrapper>

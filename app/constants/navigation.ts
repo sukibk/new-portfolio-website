@@ -4,4 +4,10 @@ export const NAVIGATION_MENU = [
   "TIMELINE",
   "PROJECTS",
   "CONTACT",
+  "BLOG",
+];
+
+export const BLOG_NAVIGATION_MENU = [
+  "HOME",
+  "BLOG",
 ];
