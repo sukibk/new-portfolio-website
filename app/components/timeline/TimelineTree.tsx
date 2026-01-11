@@ -12,7 +12,7 @@ const TimelineTree = () => {
       <TimelineContainer />
       <DownloadResumeButton
         variant="displaySmall"
-        className="mt-10 ml-[3.2rem] md:ml-0"
+        className="mt-10"
       />
     </div>
   );
