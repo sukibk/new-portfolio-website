@@ -3,6 +3,5 @@ export const NAVIGATION_MENU = [
   "ABOUT",
   "TIMELINE",
   "PROJECTS",
-  "TESTIMONIALS",
   "CONTACT",
 ];

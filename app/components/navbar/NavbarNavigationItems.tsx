@@ -11,18 +11,6 @@ const NavbarNavigationItems = ({
   showMenu = false,
   toggleMenu,
 }: NavbarNavigationItemProps) => {
-  const handleNavClick = (e: React.MouseEvent, text: string) => {
-    e.preventDefault();
-    toggleMenu();
-    setTimeout(() => {
-      const el = document.getElementById(text.toLowerCase());
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth" });
-        window.history.pushState(null, "", `#${text.toLowerCase()}`);
-      }
-    }, 800);
-  };
-
   return (
     <AnimatePresence>
       {showMenu && (
@@ -39,7 +27,7 @@ const NavbarNavigationItems = ({
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -500 }}
               transition={{ duration: 0.2, delay: i * 0.15 }}
-              onClick={(e) => handleNavClick(e, text)}
+              onClick={() => toggleMenu()}
               className="text-2xl md:text-3xl text-foreground-title font-code
                 hover:text-primary transition-all duration-300
                 relative group cursor-pointer"

@@ -18,7 +18,7 @@ const TimelinePage = () => {
        overflow-hidden lg:overflow-visible
       "
     >
-      <article className="flex min-h-screen w-full flex-col-reverse gap-20 lg:flex-row">
+      <article className="flex min-h-screen w-full flex-col-reverse gap-8 lg:gap-20 lg:flex-row">
         <TimelineTree />
         <ResumeContainer />
       </article>

@@ -36,7 +36,7 @@ const AboutGraphics = ({ children }: AboutGraphicsProps) => {
   }
 
   return (
-    <div className="flex-1 flex flex-col h-full pt-20 md:pt-0 gap-8">
+    <div className="flex-1 flex flex-col h-full pt-32 lg:pt-0 gap-8">
       <DndContext id="tech-stack-dnd" onDragEnd={handleDragEnd}>
         <ScrollWrapper className="flex flex-col items-center gap-2">
           <div className="flex justify-center items-center">
