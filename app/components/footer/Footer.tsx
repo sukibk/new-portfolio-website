@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
@@ -54,9 +55,21 @@ const Footer = () => {
               viewport={{ once: true }}
               transition={{ delay: 0.1, duration: 0.4 }}
             >
-              <h3 className="text-2xl font-bold font-lilita-one">
-                Marko<span className="text-primary">Sudar</span>
-              </h3>
+              {/* Logo - switches based on theme */}
+              <Image
+                src="/site/light_mode_logo.png"
+                alt="Marko Sudar"
+                width={150}
+                height={40}
+                className="dark:hidden"
+              />
+              <Image
+                src="/site/dark_mode_logo.png"
+                alt="Marko Sudar"
+                width={150}
+                height={40}
+                className="hidden dark:block"
+              />
               <p className="text-foreground-text/70 font-code text-sm leading-relaxed">
                 <span className="text-primary/70">{`// `}</span>
                 Full-stack developer passionate about building innovative
