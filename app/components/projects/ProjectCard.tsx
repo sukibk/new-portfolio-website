@@ -19,7 +19,8 @@ const ProjectCard = ({ project, index, onClick }: ProjectCardProps) => {
     <motion.div
       variants={projectCardVariants}
       initial="hidden"
-      animate="visible"
+      whileInView="visible"
+      viewport={{ once: true }}
       custom={index}
       whileHover={{ scale: 1.02, y: -4 }}
       className="h-full cursor-pointer"

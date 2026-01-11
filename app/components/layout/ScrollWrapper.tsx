@@ -13,22 +13,29 @@ interface ScrollWrapperProps {
  * ScrollWrapper Component
  * ------------------------
  * A reusable motion-enabled wrapper that animates its children when they scroll into view.
- * Mobile: no animation | Desktop: fade + y-scroll
+ * Mobile: fade with delay (no blink) | Desktop: fade + y-scroll on scroll
  */
 const ScrollWrapper = ({ children, style, className }: ScrollWrapperProps) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   const isMobile = useIsMobile();
 
-  // No animation on mobile - prevents hydration blink
+  // Mobile: simple fade animation with delay (same pattern as AboutText)
   if (isMobile) {
     return (
-      <div className={className} style={style}>
+      <motion.div
+        className={className}
+        style={style}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+      >
         {children}
-      </div>
+      </motion.div>
     );
   }
 
+  // Desktop: fade + y-scroll triggered by scroll position
   return (
     <motion.div
       ref={ref}

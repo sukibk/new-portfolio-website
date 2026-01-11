@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -58,12 +59,20 @@ const ContactSection = () => {
       </ScrollWrapper>
 
       {/* Code-like description */}
-      <div className="font-code text-foreground-text/60 dark:text-foreground-text/50 text-xs md:text-sm mb-8 space-y-1">
-        <p className="text-center">
-          <span className="text-primary/70">{`// `}</span>
-          Let&apos;s build something amazing together
-        </p>
-      </div>
+      <ScrollWrapper>
+        <motion.div
+          className="font-code text-foreground-text/60 dark:text-foreground-text/50 text-xs md:text-sm mb-8 space-y-1"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.4 }}
+        >
+          <p className="text-center">
+            <span className="text-primary/70">{`// `}</span>
+            Let&apos;s build something amazing together
+          </p>
+        </motion.div>
+      </ScrollWrapper>
 
       <div className="w-full max-w-2xl px-4">
         <ArticleCard className="p-6 md:p-8 relative overflow-hidden">
@@ -83,7 +92,12 @@ const ContactSection = () => {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5 font-code">
               {/* Name field */}
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1, duration: 0.4 }}
+              >
                 <label className="block text-foreground-text/70 text-sm mb-2">
                   <span className="text-primary/70">const </span>
                   <span className="text-foreground-title">name</span>
@@ -102,10 +116,15 @@ const ContactSection = () => {
                     text-foreground-title placeholder:text-foreground-text/40
                     transition-all duration-300"
                 />
-              </div>
+              </motion.div>
 
               {/* Email field */}
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 0.4 }}
+              >
                 <label className="block text-foreground-text/70 text-sm mb-2">
                   <span className="text-primary/70">const </span>
                   <span className="text-foreground-title">email</span>
@@ -124,10 +143,15 @@ const ContactSection = () => {
                     text-foreground-title placeholder:text-foreground-text/40
                     transition-all duration-300"
                 />
-              </div>
+              </motion.div>
 
               {/* Message field */}
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3, duration: 0.4 }}
+              >
                 <label className="block text-foreground-text/70 text-sm mb-2">
                   <span className="text-primary/70">const </span>
                   <span className="text-foreground-title">message</span>
@@ -146,10 +170,16 @@ const ContactSection = () => {
                     text-foreground-title placeholder:text-foreground-text/40
                     transition-all duration-300 resize-none"
                 />
-              </div>
+              </motion.div>
 
               {/* Submit button */}
-              <div className="pt-2">
+              <motion.div
+                className="pt-2"
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.4 }}
+              >
                 <Button
                   type="submit"
                   variant="primary"
@@ -158,21 +188,33 @@ const ContactSection = () => {
                 >
                   {isSubmitting ? "sending..." : "submit()"}
                 </Button>
-              </div>
+              </motion.div>
 
               {/* Code comment */}
-              <p className="text-foreground-text/40 text-xs text-center pt-2">
+              <motion.p
+                className="text-foreground-text/40 text-xs text-center pt-2"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.5, duration: 0.4 }}
+              >
                 <span className="text-primary/50">{`// `}</span>
                 or reach out directly via social links below
-              </p>
+              </motion.p>
             </form>
           )}
         </ArticleCard>
 
         {/* Social links */}
-        <div className="flex justify-center gap-6 mt-8">
+        <motion.div
+          className="flex justify-center gap-6 mt-8"
+          initial={{ opacity: 0, y: 10 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.6, duration: 0.4 }}
+        >
           <a
-            href="https://github.com/msudar"
+            href="https://github.com/sukibk"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-xl bg-background/50 dark:bg-background/30
@@ -183,7 +225,7 @@ const ContactSection = () => {
             <FaGithub className="w-6 h-6" />
           </a>
           <a
-            href="https://linkedin.com/in/markosudar"
+            href="https://www.linkedin.com/in/marko-sudar-00918221b/"
             target="_blank"
             rel="noopener noreferrer"
             className="p-3 rounded-xl bg-background/50 dark:bg-background/30
@@ -202,7 +244,7 @@ const ContactSection = () => {
           >
             <FaEnvelope className="w-6 h-6" />
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

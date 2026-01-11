@@ -1,5 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
+
+import ScrollWrapper from "@/app/components/layout/ScrollWrapper";
 import ProjectsContainer from "@/app/components/projects/ProjectsContainer";
 import ProjectsTitle from "@/app/components/projects/ProjectsTitle";
 
@@ -14,16 +17,24 @@ const ProjectsSection = () => {
       <ProjectsTitle />
 
       {/* Code-like description text */}
-      <div className="font-code text-foreground-text/60 dark:text-foreground-text/50 text-xs md:text-sm mb-8 -mt-8 space-y-1">
-        <p className="text-center transition-colors duration-300 hover:text-foreground-text/80">
-          <span className="text-primary/70">{`// `}</span>
-          Featured projects and contributions
-        </p>
-        <p className="text-center transition-colors duration-300 hover:text-foreground-text/80">
-          <span className="text-primary/70">{`// `}</span>
-          Built with modern technologies and best practices
-        </p>
-      </div>
+      <ScrollWrapper>
+        <motion.div
+          className="font-code text-foreground-text/60 dark:text-foreground-text/50 text-xs md:text-sm mb-8 -mt-8 space-y-1"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.4 }}
+        >
+          <p className="text-center transition-colors duration-300 hover:text-foreground-text/80">
+            <span className="text-primary/70">{`// `}</span>
+            Featured projects and contributions
+          </p>
+          <p className="text-center transition-colors duration-300 hover:text-foreground-text/80">
+            <span className="text-primary/70">{`// `}</span>
+            Built with modern technologies and best practices
+          </p>
+        </motion.div>
+      </ScrollWrapper>
 
       <div className="size-max-screen w-full px-8">
         <ProjectsContainer />

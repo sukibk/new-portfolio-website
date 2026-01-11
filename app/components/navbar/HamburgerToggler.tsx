@@ -15,7 +15,8 @@ export const HamburgerToggler = ({
   isScrolled = false,
 }: HamburgerTogglerProps) => {
   const animatedRect = {
-    width: hamburgerOpened ? "100%" : isScrolled ? "100%" : "2.5rem",
+    width: hamburgerOpened ? "100vw" : isScrolled ? "100vw" : "2.5rem",
+    maxWidth: hamburgerOpened || isScrolled ? "100vw" : "2.5rem",
     left: hamburgerOpened || isScrolled ? 0 : "1.25rem",
     top: hamburgerOpened || isScrolled ? 0 : "1.25rem",
     height: hamburgerOpened ? "100%" : isScrolled ? "4rem" : "2.5rem",
@@ -36,8 +37,8 @@ export const HamburgerToggler = ({
       initial={false}
       animate={animatedRect}
       transition={{ duration: 0.4, ease: "easeInOut" }}
-      className={`fixed nav:!left-[calc(50%-800px)] nav:size-max-screen
-        transition-colors duration-300 z-40 top-0 left-0 ${bgClass}`}
+      className={`fixed nav:!left-[calc(50%-800px)] nav:!max-w-[100rem]
+        transition-colors duration-300 z-40 top-0 left-0 overflow-hidden ${bgClass}`}
     >
       {/* Code-like branding when scrolled */}
       {isScrolled && !hamburgerOpened && (
