@@ -26,7 +26,9 @@ const HeroCallToAction = ({ className = "" }: HeroCallToActionProps) => {
     >
       <div className="flex justify-center gap-8 md:gap-16 items-center">
         <DownloadResumeButton variant="alwaysDisplay" />
-        <Button variant="secondary">CONTACT ME</Button>
+        <a href="#contact">
+          <Button variant="secondary">CONTACT ME</Button>
+        </a>
       </div>
       <Link href="/blog">
         <span className="text-foreground-text/60 hover:text-primary font-code text-sm transition-colors duration-200 cursor-pointer">

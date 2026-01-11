@@ -51,7 +51,7 @@ const HeroImage = () => {
           <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
           Open for Collaboration
         </motion.p>
-        <motion.div variants={hi_childrenVariants} className="md:hidden">
+        <motion.div variants={hi_childrenVariants} className="md:hidden w-full">
           <HeroCallToAction />
         </motion.div>
       </motion.div>
