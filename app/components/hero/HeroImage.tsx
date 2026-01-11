@@ -41,7 +41,7 @@ const HeroImage = () => {
 
         <motion.p
           variants={hi_childrenVariants}
-          className="absolute bg-gradient-to-r from-primary to-primary/80 font-bold top-0 left-[1.56rem] md:left-0
+          className="absolute bg-gradient-to-r from-primary to-primary/80 font-bold top-0 left-0
             text-white p-1.5 px-2.5 rounded-br-lg rounded-tl-xl
             text-xs font-code z-20
             flex items-center justify-center gap-1.5
