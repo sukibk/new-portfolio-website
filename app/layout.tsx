@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/site/dark_mode_logo.png",
+        url: "/site/light_mode_logo.png",
         width: 1200,
         height: 630,
         alt: "Marko Sudar - Full-stack Developer",
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     title: "Marko Sudar",
     description:
       "Full-stack developer passionate about building innovative digital experiences.",
-    images: ["/site/dark_mode_logo.png"],
+    images: ["/site/light_mode_logo.png"],
   },
 };
 
