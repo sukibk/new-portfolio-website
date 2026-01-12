@@ -53,6 +53,30 @@ export const metadata: Metadata = {
   },
   description:
     "Full-stack developer passionate about building innovative digital experiences.",
+  metadataBase: new URL("https://markosudar.com"),
+  openGraph: {
+    title: "Marko Sudar",
+    description:
+      "Full-stack developer passionate about building innovative digital experiences.",
+    url: "https://markosudar.com",
+    siteName: "Marko Sudar",
+    type: "website",
+    images: [
+      {
+        url: "/site/dark_mode_logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Marko Sudar - Full-stack Developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Marko Sudar",
+    description:
+      "Full-stack developer passionate about building innovative digital experiences.",
+    images: ["/site/dark_mode_logo.png"],
+  },
 };
 
 export default function RootLayout({
